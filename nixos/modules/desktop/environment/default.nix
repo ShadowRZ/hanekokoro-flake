@@ -25,6 +25,7 @@
               featherpad
               fractal
               gimp3 # GIMP 3
+              godot_4
               inkscape # Inkscape
               kdePackages.kdenlive
               kdePackages.plasma-sdk # Plasma SDK
