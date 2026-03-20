@@ -5,7 +5,7 @@
         enable = true;
         settings = {
           logo = {
-            type = "iterm";
+            type = "kitty";
             source = ./logo.png;
             preserveAspectRatio = true;
           };
