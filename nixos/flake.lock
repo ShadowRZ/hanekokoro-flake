@@ -57,6 +57,26 @@
         "type": "github"
       }
     },
+    "darkly": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1773610292,
+        "narHash": "sha256-ugmR2mQ2YSQ8fatFMpPND7I2pMv0xIZq170cogWC9P0=",
+        "owner": "Bali10050",
+        "repo": "Darkly",
+        "rev": "bd6ff2636e4d6b8984a34918ab787f9b4426cf1f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Bali10050",
+        "repo": "Darkly",
+        "type": "github"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": []
@@ -305,6 +325,7 @@
         "blender-bin": "blender-bin",
         "catppuccin-nix": "catppuccin-nix",
         "crane": "crane",
+        "darkly": "darkly",
         "disko": "disko",
         "emacs-overlay": "emacs-overlay",
         "firefox-addons-nix": "firefox-addons-nix",
