@@ -4,6 +4,7 @@
       mimeow-coffees = {
         system = "x86_64-linux";
         modules = [
+          # keep-sorted start
           "base"
           "bluetooth"
           "desktop"
@@ -14,11 +15,13 @@
           "hardening"
           "nix"
           "plasma-desktop"
+          "root"
+          "shadowrz"
           "shell"
           "sound"
           "steam"
-          "root"
-          "shadowrz"
+          "without-a11y"
+          # keep-sorted end
         ];
       };
     };
