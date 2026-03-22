@@ -53,15 +53,21 @@
           ];
           initrd = {
             availableKernelModules = [
-              "xhci_pci"
-              "thunderbolt"
-              "nvme"
-              "usbhid"
-              "usb_storage"
-              "sd_mod"
+              # keep-sorted start
               "legion-laptop"
+              "nvme"
+              "sd_mod"
+              "thunderbolt"
+              "usb_storage"
+              "usbhid"
+              "xhci_pci"
+              # keep-sorted end
             ];
           };
+          plymouth.extraConfig = ''
+            DeviceScale=2
+            UseFirmwareBackground=true
+          '';
           extraModulePackages = [
             (config.boot.kernelPackages.lenovo-legion-module.overrideAttrs {
               env.NIX_CFLAGS_COMPILE = "-Wno-error=incompatible-pointer-types";
