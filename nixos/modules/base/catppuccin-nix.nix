@@ -11,9 +11,6 @@
       cursors = {
         enable = true;
       };
-      tty = {
-        enable = true;
-      };
       # keep-sorted end
     };
   };
