@@ -39,10 +39,6 @@
             extraInputsFlake = ./home-manager;
             module = import ./home-manager;
           };
-          nix-on-droid = {
-            extraInputsFlake = ./nix-on-droid;
-            module = import ./nix-on-droid;
-          };
           nixvim = {
             extraInputsFlake = ./nixvim;
             module = import ./nixvim;
@@ -55,7 +51,6 @@
 
         partitionedAttrs = {
           nixosConfigurations = "nixos";
-          nixOnDroidConfigurations = "nix-on-droid";
           devShells = "dev";
         };
       }
