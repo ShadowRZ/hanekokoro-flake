@@ -19,6 +19,7 @@
           "hardware/thunderbolt"
           "network"
           "network/networkmanager"
+          "network/throne"
           "nix"
           "security/gnupg"
           "security/lanzaboote"
