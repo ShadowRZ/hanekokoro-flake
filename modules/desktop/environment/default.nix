@@ -35,6 +35,7 @@
               pika-backup
               qpwgraph
               sqlitebrowser
+              ungoogled-chromium
               # keep-sorted end
             ];
           };
