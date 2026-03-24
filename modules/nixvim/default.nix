@@ -43,7 +43,7 @@
 
       programs.nixvim = {
         imports = [
-          config.partitions.nixvim.module.flake.modules.nixvim.default
+          config.flake.modules.nixvim.default
         ];
 
         nixpkgs.useGlobalPackages = true;
@@ -58,7 +58,7 @@
 
       programs.nixvim = {
         imports = [
-          config.partitions.nixvim.module.flake.modules.nixvim.default
+          config.flake.modules.nixvim.default
         ];
 
         nixpkgs.useGlobalPackages = true;

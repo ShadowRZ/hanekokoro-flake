@@ -91,8 +91,7 @@ in
                   home-manager.users.shadowrz = {
                     imports = builtins.map (
                       name:
-                      config.partitions.home-manager.module.flake.modules.homeManager.${name}
-                        or config.flake.modules.homeManager.${name} or { }
+                      config.flake.modules.homeManager.${name} or { }
                     ) cfg.modules;
                   };
                 }

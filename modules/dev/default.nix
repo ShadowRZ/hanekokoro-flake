@@ -15,7 +15,7 @@
 
     nixos.dev = {
       imports = [
-        config.partitions.nixvim.module.flake.modules.nixos.nixvim
+        config.flake.modules.nixos.nixvim
       ];
     };
   };
