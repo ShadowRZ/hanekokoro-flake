@@ -8,8 +8,6 @@
       # Predictable interfaces
       usePredictableInterfaceNames = true;
 
-      stevenblack.enable = true;
-
       nftables = {
         enable = true;
       };
