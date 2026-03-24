@@ -1,13 +1,9 @@
 {
-  config,
-  inputs,
   lib,
-  withSystem,
   ...
 }:
 let
   inherit (lib) types mkOption;
-  cfg = config.hanekokoro.nixos;
 in
 {
   options = {
@@ -22,7 +18,7 @@ in
               ];
               example = "x86_64-linux";
               description = ''
-                The system of the NixOS configuration.
+                Specifies the platform where the NixOS configuration will run.
               '';
             };
             useHomeManager = mkOption {
@@ -37,15 +33,7 @@ in
               '';
             };
             modules = mkOption {
-              type = types.listOf (
-                types.enum (
-                  lib.uniqueStrings (
-                    builtins.filter (name: !lib.hasPrefix "hosts/" name) (
-                      builtins.concatMap builtins.attrNames (builtins.attrValues config.flake.modules)
-                    )
-                  )
-                )
-              );
+              type = types.listOf types.str;
               example = [ "base" ];
               description = ''
                 A list of module names to be included in this configuration.
@@ -63,54 +51,5 @@ in
         Define a set of NixOS hosts.
       '';
     };
-  };
-
-  config = {
-    flake.nixosConfigurations = builtins.mapAttrs (
-      name: cfg:
-      withSystem cfg.system (
-        { pkgs, ... }:
-        inputs.nixpkgs.lib.nixosSystem {
-          modules = [
-            # Import NixOS configurations
-            {
-              imports = builtins.map (name: config.flake.modules.nixos.${name} or { }) cfg.modules;
-            }
-            # Import Home Manager configurations
-            (
-              if cfg.useHomeManager then
-                {
-                  imports = [ inputs.home-manager.nixosModules.home-manager ];
-
-                  ## Home Manager
-                  home-manager = {
-                    useUserPackages = true;
-                    useGlobalPkgs = true;
-                  };
-
-                  home-manager.users.shadowrz = {
-                    imports = builtins.map (name: config.flake.modules.homeManager.${name} or { }) cfg.modules;
-                  };
-                }
-              else
-                { }
-            )
-            (
-              { lib, ... }:
-              {
-                # Import system local config
-                imports = [
-                  config.flake.modules.nixos."hosts/${name}"
-                ];
-
-                networking.hostName = lib.mkDefault name;
-
-                nixpkgs.pkgs = pkgs;
-              }
-            )
-          ];
-        }
-      )
-    ) cfg;
   };
 }

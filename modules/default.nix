@@ -20,7 +20,6 @@
           "shell"
           "sound"
           "steam"
-          "without-a11y"
           # keep-sorted end
         ];
       };
