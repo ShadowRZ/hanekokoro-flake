@@ -85,7 +85,6 @@
           gdu
           lsof
           man-pages
-          nh
           p7zip
           pciutils
           strace

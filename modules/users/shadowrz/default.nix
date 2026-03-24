@@ -47,8 +47,12 @@
           packages = with pkgs; [
             # keep-sorted start
             cntr
+            dix
             ffmpeg-full # FFmpeg
             hugo # Hugo
+            nh
+            nix-output-monitor
+            nix-tree
             # keep-sorted end
           ];
 
