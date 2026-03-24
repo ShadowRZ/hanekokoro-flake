@@ -79,19 +79,22 @@
 
       environment = {
         systemPackages = with pkgs; [
+          # keep-sorted start
           dnsutils
-          pciutils
-          usbutils
-          lsof
-          strace
           file
           gdu
-          wget
-          tree
-          unzip
-          p7zip
-          unar
+          lsof
           man-pages
+          nh
+          p7zip
+          pciutils
+          strace
+          tree
+          unar
+          unzip
+          usbutils
+          wget
+          # keep-sorted end
         ];
       };
     };

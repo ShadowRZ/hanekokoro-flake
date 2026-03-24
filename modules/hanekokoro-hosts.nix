@@ -7,6 +7,7 @@
           "base"
           "desktop"
           "desktop/dev"
+          "desktop/dev/android"
           "desktop/plasma6"
           "desktop/steam"
           "dev"
