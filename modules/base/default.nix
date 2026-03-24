@@ -1,43 +1,22 @@
+{ inputs, ... }:
 {
   flake.modules.nixos = {
     base =
-      { pkgs, ... }:
+      { lib, ... }:
       {
-        environment = {
-          defaultPackages = [ ];
-          systemPackages = with pkgs; [
-            dnsutils
-            pciutils
-            usbutils
-            lsof
-            strace
-            file
-            gdu
-            wget
-            tree
-            unzip
-            p7zip
-            unar
-            man-pages
-          ];
-        };
-
-        services.userborn.enable = true;
-
-        security.pam.loginLimits = [
-          {
-            domain = "*";
-            type = "-";
-            item = "memlock";
-            value = "unlimited";
-          }
+        imports = [
+          inputs.nixos-sensible.nixosModules.default
         ];
 
-        users.mutableUsers = false;
+        environment.defaultPackages = [ ];
 
-        system.etc.overlay = {
-          enable = true;
-          mutable = true;
+        programs = {
+          nano.enable = lib.mkDefault false;
+          # In github:Guanran928/nixos-sensible Vim is set as default editor without
+          # programs.vim.enable = true which isn't expected to work.
+          # Workaround this.
+          # The downside is that NixOS configurations must override with lib.mkForce
+          vim.defaultEditor = false;
         };
       };
   };

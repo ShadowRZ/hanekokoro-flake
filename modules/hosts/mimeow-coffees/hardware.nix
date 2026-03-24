@@ -4,19 +4,14 @@
     "hosts/mimeow-coffees" =
       {
         config,
-        pkgs,
         ...
       }:
       {
-
         imports = [ inputs.nixpkgs.nixosModules.notDetected ];
 
         hardware = {
           cpu.intel.updateMicrocode = true;
           nvidia = {
-            package = config.boot.kernelPackages.nvidiaPackages.production;
-            open = true;
-            nvidiaSettings = true;
             prime = {
               offload = {
                 enable = true;
@@ -25,31 +20,12 @@
               intelBusId = "PCI:0@0:2:0";
               nvidiaBusId = "PCI:1@0:0:0";
             };
-            powerManagement = {
-              enable = true;
-              finegrained = true;
-            };
-          };
-          graphics = {
-            extraPackages = with pkgs; [
-              intel-compute-runtime
-              intel-media-driver
-            ];
-            extraPackages32 = with pkgs.pkgsi686Linux; [
-              intel-media-driver
-            ];
-            enable32Bit = true;
           };
         };
-
-        services.xserver.videoDrivers = [ "nvidia" ];
 
         boot = {
           kernelModules = [
             "legion-laptop"
-          ];
-          kernelParams = [
-            "nvidia.NVreg_TemporaryFilePath=/var/tmp"
           ];
           initrd = {
             availableKernelModules = [
@@ -69,20 +45,12 @@
             UseFirmwareBackground=true
           '';
           extraModulePackages = [
-            (config.boot.kernelPackages.lenovo-legion-module.overrideAttrs {
-              env.NIX_CFLAGS_COMPILE = "-Wno-error=incompatible-pointer-types";
-            })
+            config.boot.kernelPackages.lenovo-legion-module
           ];
         };
 
-        # Bolt
-        services.hardware.bolt.enable = true;
-
         # SSD TRIM
         services.fstrim.enable = true;
-
-        # fwupd
-        services.fwupd.enable = true;
       };
   };
 }

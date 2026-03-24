@@ -19,7 +19,6 @@
           users.users.shadowrz = {
             packages = with pkgs; [
               # keep-sorted start
-              android-studio
               blender_5_0 # Blender 5.0.* (Binary)
               d-spy # D-Spy
               featherpad
@@ -43,13 +42,11 @@
     };
 
     homeManager = {
-      desktop = _: {
-        systemd.user.sessionVariables.QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
-        home.sessionVariables.QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
-      };
-      gnupg =
+      desktop =
         { pkgs, ... }:
         {
+          systemd.user.sessionVariables.QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
+          home.sessionVariables.QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
           services.gpg-agent.pinentry.package = pkgs.pinentry-qt;
         };
     };

@@ -32,7 +32,9 @@ in
                   };
 
                   home-manager.users.shadowrz = {
-                    imports = map (name: config.flake.modules.homeManager.${name} or { }) cfg.modules;
+                    imports = (map (name: config.flake.modules.homeManager.${name} or { }) cfg.modules) ++ [
+                      (config.flake.modules.homeManager."hosts/${name}" or { })
+                    ];
                   };
                 };
               }

@@ -19,43 +19,41 @@
       };
     };
 
-    modules.nixos = {
-      shadowrz =
-        { pkgs, ... }:
-        {
-          imports = [
-            (
-              { config, ... }:
-              {
-                users.users.shadowrz.hashedPasswordFile = config.sops.secrets.passwd.path;
-              }
-            )
+    modules.nixos."users/shadowrz" =
+      { pkgs, ... }:
+      {
+        imports = [
+          (
+            { config, ... }:
+            {
+              users.users.shadowrz.hashedPasswordFile = config.sops.secrets.passwd.path;
+            }
+          )
+        ];
+
+        users.users.shadowrz = {
+          uid = 1000;
+          isNormalUser = true;
+          shell = pkgs.fish;
+          description = config.flake.meta.users.shadowrz.name;
+
+          extraGroups = [
+            "wheel"
+            "networkmanager"
+            "wireshark"
+            "video"
           ];
 
-          users.users.shadowrz = {
-            uid = 1000;
-            isNormalUser = true;
-            shell = pkgs.fish;
-            description = config.flake.meta.users.shadowrz.name;
+          packages = with pkgs; [
+            # keep-sorted start
+            cntr
+            ffmpeg-full # FFmpeg
+            hugo # Hugo
+            # keep-sorted end
+          ];
 
-            extraGroups = [
-              "wheel"
-              "networkmanager"
-              "wireshark"
-              "video"
-            ];
-
-            packages = with pkgs; [
-              # keep-sorted start
-              cntr
-              ffmpeg-full # FFmpeg
-              hugo # Hugo
-              # keep-sorted end
-            ];
-
-            openssh.authorizedKeys.keys = config.flake.meta.users.shadowrz.authorizedKeys;
-          };
+          openssh.authorizedKeys.keys = config.flake.meta.users.shadowrz.authorizedKeys;
         };
-    };
+      };
   };
 }

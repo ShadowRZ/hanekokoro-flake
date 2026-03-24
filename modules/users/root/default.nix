@@ -1,11 +1,9 @@
 {
-  flake.modules.nixos = {
-    root =
-      { pkgs, ... }:
-      {
-        users.users.root = {
-          shell = pkgs.fish;
-        };
+  flake.modules.nixos."users/root" =
+    { pkgs, ... }:
+    {
+      users.users.root = {
+        shell = pkgs.fish;
       };
-  };
+    };
 }
