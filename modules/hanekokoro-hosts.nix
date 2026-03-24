@@ -2,7 +2,6 @@
   hanekokoro = {
     nixos = {
       mimeow-coffees = {
-        system = "x86_64-linux";
         modules = [
           # keep-sorted start
           "base"

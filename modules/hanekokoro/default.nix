@@ -11,16 +11,6 @@ in
       type = types.attrsOf (
         types.submodule {
           options = {
-            system = mkOption {
-              type = types.enum [
-                "x86_64-linux"
-                "aarch64-linux"
-              ];
-              example = "x86_64-linux";
-              description = ''
-                Specifies the platform where the NixOS configuration will run.
-              '';
-            };
             useHomeManager = mkOption {
               type = types.bool;
               default = true;

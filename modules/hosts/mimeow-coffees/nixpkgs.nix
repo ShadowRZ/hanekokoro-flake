@@ -1,11 +1,11 @@
 { inputs, ... }:
 {
-  perSystem =
-    { system, ... }:
+  flake.modules.nixos."hosts/mimeow-coffees" =
+    { lib, ... }:
     {
-      # Instance a global Nixpkgs
-      _module.args.pkgs = import inputs.nixpkgs {
-        inherit system;
+      nixpkgs = {
+        hostPlatform = "x86_64-linux";
+
         overlays = [
           # keep-sorted start
           inputs.blender-bin.overlays.default
@@ -17,9 +17,10 @@
           inputs.shadowrz.overlays.default
           # keep-sorted end
         ];
+
         config = {
           allowUnfree = true;
-          allowInsecurePredicate = pkg: builtins.elem (inputs.nixpkgs.lib.getName pkg) [ "electron" ];
+          allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "electron" ];
           # https://developer.android.google.cn/studio/terms
           android_sdk.accept_license = true;
         };
