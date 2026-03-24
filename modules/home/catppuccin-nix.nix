@@ -20,9 +20,6 @@
       fish = {
         enable = true;
       };
-      gh-dash = {
-        enable = true;
-      };
       mpv = {
         enable = true;
       };
