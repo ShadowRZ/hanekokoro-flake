@@ -5,20 +5,22 @@
 My personal NixOS + Home Manager + Nix On Droid configuration.
 for packages see [`github:ShadowRZ/nur-packages`](https://github.com/ShadowRZ/nur-packages)
 
+Based on [Dendritic](https://github.com/mightyiam/dendritic) pattern.
+
 [![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
 
 ## Components
 
 * **Desktop Environment:** [KDE Plasma 6]
 * **Terminal:** [Kitty]
-* **Browser:** Firefox + [Firefox GNOME Theme]
+* **Browser:** Firefox + [Parfait]
 * **Shell:** [Fish] + [Starship]
 * **Display Manager:** [SDDM]
 * **Colorscheme:** [Catppuccin]
 * **Media player:** [mpv]
 * **Terminal Editor:** [Neovim], maybe explore [Helix]?
 * **\[Desktop\] GUI Editor:** [VS Code] + [Zed] currently, have plans to build my own editor.
-* **\[Desktop\] Secure Boot:** [lanzaboote]
+* **\[Desktop\] Secure Boot:** [Lanzaboote]
 
 ## Config References
 
@@ -30,15 +32,16 @@ for packages see [`github:ShadowRZ/nur-packages`](https://github.com/ShadowRZ/nu
 <!-- References -->
 <!-- keep-sorted start -->
 [Catppuccin]: https://catppuccin.com
-[Firefox GNOME Theme]: https://github.com/rafaelmardojai/firefox-gnome-theme
 [Fish]: https://fishshell.com
 [Helix]: https://helix-editor.com
 [KDE Plasma 6]: https://kde.org/plasma-desktop
 [Kitty]: https://sw.kovidgoyal.net/kitty/
+[Lanzaboote]: https://github.com/nix-community/lanzaboote
 [Neovim]: https://neovim.io
+[Parfait]: https://github.com/reizumii/parfait
 [SDDM]: https://wiki.archlinux.org/title/SDDM
 [Starship]: https://starship.rs
 [VS Code]: https://code.visualstudio.com
-[lanzaboote]: https://github.com/nix-community/lanzaboote
+[Zed]: https://zed.dev
 [mpv]: https://mpv.io
 <!-- keep-sorted end -->
