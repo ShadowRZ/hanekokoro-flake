@@ -18,7 +18,7 @@
         spiceUSBRedirection.enable = true;
       };
 
-      systemd.services.virtnetworkd.path = [ pkgs.dnsmasq ];
+      networking.firewall.trustedInterfaces = [ "virbr0" ];
 
       # Users
       users.users.shadowrz.extraGroups = [ "libvirtd" ];
