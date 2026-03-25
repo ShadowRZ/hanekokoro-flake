@@ -6,6 +6,7 @@
         settings = {
           logo = {
             type = "kitty";
+            width = 33;
             source = ./logo.png;
             preserveAspectRatio = true;
           };
