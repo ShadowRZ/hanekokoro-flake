@@ -10,7 +10,7 @@ for packages see [`github:ShadowRZ/nur-packages`](https://github.com/ShadowRZ/nu
 ## Components
 
 * **Desktop Environment:** [KDE Plasma 6]
-* **Terminal:** [WezTerm]
+* **Terminal:** [Kitty]
 * **Browser:** Firefox + [Firefox GNOME Theme]
 * **Shell:** [Fish] + [Starship]
 * **Display Manager:** [SDDM]
@@ -34,11 +34,11 @@ for packages see [`github:ShadowRZ/nur-packages`](https://github.com/ShadowRZ/nu
 [Fish]: https://fishshell.com
 [Helix]: https://helix-editor.com
 [KDE Plasma 6]: https://kde.org/plasma-desktop
+[Kitty]: https://sw.kovidgoyal.net/kitty/
 [Neovim]: https://neovim.io
 [SDDM]: https://wiki.archlinux.org/title/SDDM
 [Starship]: https://starship.rs
 [VS Code]: https://code.visualstudio.com
-[WezTerm]: https://wezterm.org
 [lanzaboote]: https://github.com/nix-community/lanzaboote
 [mpv]: https://mpv.io
 <!-- keep-sorted end -->

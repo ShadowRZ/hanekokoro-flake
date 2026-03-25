@@ -35,6 +35,9 @@
       fish = {
         enable = true;
       };
+      kitty = {
+        enable = true;
+      };
       mpv = {
         enable = true;
       };

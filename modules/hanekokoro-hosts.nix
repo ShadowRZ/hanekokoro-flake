@@ -26,6 +26,7 @@
           "security/lanzaboote"
           "security/pam-fido2"
           "shell"
+          "terminal/kitty"
           "terminal/kmscon"
           "users/root"
           "users/shadowrz"

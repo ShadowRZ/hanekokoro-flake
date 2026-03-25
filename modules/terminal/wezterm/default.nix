@@ -1,13 +1,11 @@
 {
-  flake.modules.homeManager = {
-    desktop =
-      { pkgs, ... }:
-      {
-        programs.wezterm = {
-          enable = true;
-          package = pkgs.wezterm;
-          extraConfig = builtins.readFile ./wezterm.lua;
-        };
+  flake.modules.homeManager."terminal/wezterm" =
+    { pkgs, ... }:
+    {
+      programs.wezterm = {
+        enable = true;
+        package = pkgs.wezterm;
+        extraConfig = builtins.readFile ./wezterm.lua;
       };
-  };
+    };
 }
