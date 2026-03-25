@@ -18,6 +18,8 @@
         spiceUSBRedirection.enable = true;
       };
 
+      systemd.services.virtnetworkd.path = [ pkgs.dnsmasq ];
+
       # Users
       users.users.shadowrz.extraGroups = [ "libvirtd" ];
 
