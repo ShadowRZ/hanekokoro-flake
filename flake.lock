@@ -57,26 +57,6 @@
         "type": "github"
       }
     },
-    "darkly": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1774304439,
-        "narHash": "sha256-6q2+HSOh3ZWLBnBkaKVgAuJJlHF+ny1bI6zatZaj+x0=",
-        "owner": "Bali10050",
-        "repo": "Darkly",
-        "rev": "79e8943147d7d5afa0db956776607ca366491fb7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Bali10050",
-        "repo": "Darkly",
-        "type": "github"
-      }
-    },
     "disko": {
       "inputs": {
         "nixpkgs": []
@@ -360,9 +340,7 @@
         "systems": [
           "systems"
         ],
-        "treefmt-nix": [
-          "treefmt-nix"
-        ]
+        "treefmt-nix": []
       },
       "locked": {
         "lastModified": 1774625568,
@@ -419,7 +397,6 @@
         "blender-bin": "blender-bin",
         "catppuccin-nix": "catppuccin-nix",
         "crane": "crane",
-        "darkly": "darkly",
         "disko": "disko",
         "emacs-overlay": "emacs-overlay",
         "firefox-addons-nix": "firefox-addons-nix",

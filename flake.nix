@@ -21,10 +21,6 @@
     crane = {
       url = "github:ipetkov/crane";
     };
-    darkly = {
-      url = "github:Bali10050/Darkly";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "";
@@ -95,7 +91,7 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         noctalia-qs.inputs = {
-          treefmt-nix.follows = "treefmt-nix";
+          treefmt-nix.follows = "";
           systems.follows = "systems";
         };
       };

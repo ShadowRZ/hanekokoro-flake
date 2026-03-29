@@ -40,7 +40,6 @@
           extraGroups = [
             "wheel"
             "networkmanager"
-            "wireshark"
             "video"
           ];
 

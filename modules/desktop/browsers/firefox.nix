@@ -10,14 +10,6 @@
           ### Firefox
           firefox = {
             enable = true;
-            package = pkgs.firefox.override {
-              nativeMessagingHosts = with pkgs; [
-                # Plasma Integration
-                kdePackages.plasma-browser-integration
-                # Firefox PWA Plugin
-                firefoxpwa
-              ];
-            };
             policies = {
               PasswordManagerEnabled = false;
               DisablePocket = true;
@@ -93,7 +85,6 @@
                   pkgs.firefox-addons.offline-qr-code-generator
                   pkgs.firefox-addons.open-in-browser
                   pkgs.firefox-addons.plasma-integration
-                  pkgs.firefox-addons.pwas-for-firefox
                   pkgs.firefox-addons.qr-code-address-bar
                   pkgs.firefox-addons.re-enable-right-click
                   pkgs.firefox-addons.react-devtools
