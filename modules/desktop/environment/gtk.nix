@@ -7,10 +7,9 @@
           let
             gtkIni = {
               gtk-application-prefer-dark-theme = false;
-              gtk-decoration-layout = "icon,menu:minimize,maximize,close";
+              gtk-decoration-layout = "icon,menu:close";
               gtk-enable-animations = true;
               gtk-primary-button-warps-slider = true;
-              gtk-sound-theme-name = "ocean";
             };
           in
           {
@@ -23,7 +22,6 @@
               configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
               extraConfig = ''
                 gtk-can-change-accels = 1
-                gtk-sound-theme-name = "ocean"
                 gtk-enable-animations = 1
                 gtk-primary-button-warps-slider = 1
                 gtk-toolbar-style = 3

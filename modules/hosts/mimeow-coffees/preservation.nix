@@ -24,9 +24,6 @@
                 how = "symlink";
                 configureParent = true;
               }
-              {
-                file = "/etc/plasmalogin.conf";
-              }
             ];
             users = {
               shadowrz = {
@@ -40,24 +37,59 @@
                   "Public"
                   "Templates"
                   "Videos"
+                  # keep-sorted start
                   ".android"
                   ".cache"
                   ".cargo"
                   ".conda"
-                  ".config" # FIXME
-                  ".eclipse"
+                  ".config/Code"
+                  ".config/GIMP"
+                  ".config/Google"
+                  ".config/Throne"
+                  ".config/blender"
+                  ".config/borg"
+                  ".config/chromium"
+                  ".config/dconf"
+                  ".config/doom"
+                  ".config/emacs"
+                  ".config/fcitx5"
+                  ".config/godot"
+                  ".config/inkscape"
+                  ".config/libvirt"
+                  ".config/noctalia"
+                  ".config/onlyoffice"
+                  ".config/pika-backup"
+                  ".config/qt5ct"
+                  ".config/qt6ct"
+                  ".config/zed"
                   ".gradle"
                   ".java"
                   ".konan"
                   ".local/share"
-                  ".local/state"
+                  ".local/share/Google"
+                  ".local/share/Steam"
+                  ".local/share/applications"
+                  ".local/share/direnv"
+                  ".local/share/doom"
+                  ".local/share/fcitx5"
+                  ".local/share/fonts"
+                  ".local/share/fractal"
+                  ".local/share/godot"
+                  ".local/share/keyrings"
+                  ".local/share/nautilus"
+                  ".local/share/nvim"
+                  ".local/share/onlyoffice"
+                  ".local/share/pki"
+                  ".local/share/waydroid"
+                  ".local/share/zed"
+                  ".local/share/zoxide"
                   ".m2"
                   ".mitmproxy"
-                  ".mozilla"
-                  ".thunderbird"
+                  ".mozilla/firefox/default"
                   ".renpy"
-                  ".var"
+                  ".thunderbird/default"
                   ".vscode"
+                  # keep-sorted end
                   {
                     directory = ".gnupg";
                     mode = "0700";
@@ -68,8 +100,14 @@
                   }
                 ];
                 files = [
+                  # keep-sorted start
+                  ".config/Yubico/u2f_keys"
+                  ".config/gh/hosts.yml"
+                  ".config/nix/nix.conf"
+                  ".config/sops/age/keys.txt"
+                  ".local/share/fish/fish_history"
                   ".npmrc"
-                  ".nvidia-settings-rc"
+                  # keep-sorted end
                 ];
               };
               root = {

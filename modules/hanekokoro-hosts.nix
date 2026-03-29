@@ -8,7 +8,7 @@
           "desktop"
           "desktop/dev"
           "desktop/dev/android"
-          "desktop/plasma6"
+          "desktop/niri"
           "desktop/steam"
           "dev"
           "hardening"

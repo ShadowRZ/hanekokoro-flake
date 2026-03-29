@@ -57,8 +57,7 @@
               default = {
                 name = "Hanekokoro (はねこころ)";
                 settings = {
-                  # Disable builtin MPRIS support in favor of Plasma Integration's one
-                  "media.hardwaremediakeys.enabled" = false;
+                  "media.hardwaremediakeys.enabled" = true;
                   # Force enable account containers
                   "privacy.userContext.enabled" = true;
                   "privacy.userContext.ui.enabled" = true;

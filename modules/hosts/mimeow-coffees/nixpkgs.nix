@@ -14,6 +14,7 @@
           inputs.neovim-overlay.overlays.default
           inputs.nix-indexdb.overlays.nix-index
           inputs.rust-overlay.overlays.default
+          inputs.self.overlays.default
           inputs.shadowrz.overlays.default
           # keep-sorted end
         ];

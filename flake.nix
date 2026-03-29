@@ -68,6 +68,13 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+    niri = {
+      url = "github:niri-wm/niri";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        rust-overlay.follows = "";
+      };
+    };
     nix-indexdb = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "";
@@ -83,6 +90,16 @@
         systems.follows = "systems";
       };
     };
+    noctalia-shell = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        noctalia-qs.inputs = {
+          treefmt-nix.follows = "treefmt-nix";
+          systems.follows = "systems";
+        };
+      };
+    };
     preservation = {
       url = "github:nix-community/preservation";
     };
@@ -93,6 +110,10 @@
     shadowrz = {
       url = "github:ShadowRZ/nur-packages";
       inputs.nixpkgs.follows = "";
+    };
+    silent-sddm = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";

@@ -21,20 +21,12 @@
               # keep-sorted start
               blender_5_0 # Blender 5.0.* (Binary)
               d-spy # D-Spy
-              featherpad
               fractal
               gimp3 # GIMP 3
               godot_4
               inkscape # Inkscape
-              kdePackages.kdenlive
-              kdePackages.plasma-sdk # Plasma SDK
-              ## KDE Packages
-              krusader
               onlyoffice-desktopeditors # ONLYOFFICE Desktop editors
-              pdfarranger
               pika-backup
-              qpwgraph
-              sqlitebrowser
               ungoogled-chromium
               # keep-sorted end
             ];
@@ -48,7 +40,12 @@
         {
           systemd.user.sessionVariables.QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
           home.sessionVariables.QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
-          services.gpg-agent.pinentry.package = pkgs.pinentry-qt;
+          services.gpg-agent.pinentry.package = pkgs.pinentry-curses;
+
+          xdg.userDirs = {
+            enable = true;
+            setSessionVariables = false;
+          };
         };
     };
   };
