@@ -36,7 +36,6 @@
       ];
 
       programs = {
-        nm-applet.enable = true;
         niri = {
           enable = true;
           package = withSystem pkgs.stdenv.hostPlatform.system (
