@@ -30,6 +30,7 @@
       services.speechd.enable = false;
 
       services.userborn.enable = true;
+      services.zerotierone.enable = true;
 
       security.pam.loginLimits = [
         {
