@@ -40,6 +40,17 @@
           };
 
         systemd.user.sessionVariables.GTK2_RC_FILES = config.home.sessionVariables.GTK2_RC_FILES;
+
+        dconf.settings = {
+          "org/gnome/desktop/interface" = {
+            font-name = "Space Grotesk 13";
+            document-font-name = "Space Grotesk 13";
+            monospace-font-name = "Hanekokoro Mono Extended 13";
+          };
+          "org/gnome/desktop/wm/preferences" = {
+            button-layout = "icon,appmenu:close";
+          };
+        };
       };
   };
 }
