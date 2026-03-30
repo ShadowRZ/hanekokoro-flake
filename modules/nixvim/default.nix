@@ -3,12 +3,6 @@
   flake.modules = {
     # Nixvim Defaults
     nixvim.default = _: {
-      enable = true;
-      defaultEditor = true;
-      vimAlias = true;
-      viAlias = true;
-      vimdiffAlias = true;
-
       opts = {
         title = true;
         number = true;
@@ -46,6 +40,11 @@
           config.flake.modules.nixvim.default
         ];
 
+        enable = true;
+        defaultEditor = true;
+        vimAlias = true;
+        viAlias = true;
+        vimdiffAlias = true;
         nixpkgs.useGlobalPackages = true;
       };
     };
@@ -61,8 +60,23 @@
           config.flake.modules.nixvim.default
         ];
 
+        enable = true;
+        defaultEditor = true;
+        vimAlias = true;
+        viAlias = true;
+        vimdiffAlias = true;
         nixpkgs.useGlobalPackages = true;
       };
     };
   };
+
+  perSystem =
+    { system, ... }:
+    {
+      packages.nixvim = inputs.nixvim.legacyPackages.${system}.makeNixvim {
+        imports = [
+          config.flake.modules.nixvim.default
+        ];
+      };
+    };
 }
