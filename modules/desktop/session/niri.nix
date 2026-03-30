@@ -32,6 +32,7 @@
       environment.systemPackages = [
         pkgs.xwayland-satellite
         pkgs.shadowrz.silent-sddm
+        pkgs.nautilus
       ];
 
       programs = {
