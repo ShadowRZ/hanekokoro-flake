@@ -25,9 +25,7 @@ Based on [Dendritic](https://github.com/mightyiam/dendritic) pattern.
 ## Config References
 
 * [`github:drupol/infra`](https://github.com/drupol/infra) (See also: [Refactoring My Infrastructure As Code Configurations](https://not-a-number.io/2025/refactoring-my-infrastructure-as-code-configurations/))
-* [`github:Guanran928/flakes`](https://github.com/Guanran928/flakes)
-* [`github:Zaechus/nixos-config`](https://github.com/Zaechus/nixos-config)
-* [`github:NickCao/flakes`](https://github.com/NickCao/flakes)
+* [`github:SaltedFishesNG/Dandelions`](https://github.com/SaltedFishesNG/Dandelions)
 
 <!-- References -->
 <!-- keep-sorted start -->
