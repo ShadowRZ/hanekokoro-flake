@@ -27,6 +27,7 @@
               inkscape # Inkscape
               onlyoffice-desktopeditors # ONLYOFFICE Desktop editors
               pika-backup
+              quodlibet-full
               ungoogled-chromium
               # keep-sorted end
             ];
