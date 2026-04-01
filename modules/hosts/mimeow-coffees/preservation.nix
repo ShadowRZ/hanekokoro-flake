@@ -61,6 +61,7 @@
                   ".config/pika-backup"
                   ".config/qt5ct"
                   ".config/qt6ct"
+                  ".config/valent"
                   ".config/zed"
                   ".gradle"
                   ".java"
