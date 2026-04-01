@@ -10,7 +10,7 @@
             systemPackages = with pkgs; [
               adw-gtk3
               wl-clipboard
-              fluent-icon-theme
+              papirus-icon-theme
             ];
           };
 
