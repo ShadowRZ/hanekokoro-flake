@@ -85,6 +85,7 @@
                   pkgs.firefox-addons.offline-qr-code-generator
                   pkgs.firefox-addons.open-in-browser
                   pkgs.firefox-addons.plasma-integration
+                  pkgs.firefox-addons.pywalfox
                   pkgs.firefox-addons.qr-code-address-bar
                   pkgs.firefox-addons.re-enable-right-click
                   pkgs.firefox-addons.react-devtools
