@@ -36,22 +36,23 @@ layout {
         proportion 0.66667
     }
     default-column-width { proportion 0.5; }
-    focus-ring {
-        width 2
-        active-color "#dc8a78"
-        inactive-color "#ccd0da"
-    }
-
     border {
         off
+    }
+
+    focus-ring {
+        on
+        width 2
+        active-color "#bcc0cc"
+        inactive-color "#e6e9ef"
     }
 
     shadow {
         on
         softness 4
         spread 2
-        offset x=0 y=0
-        color "#0004"
+        offset x=0 y=2
+        color "rgba(0, 0, 0, 0.2)"
     }
 }
 
@@ -83,23 +84,24 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 20
+    match app-id="kitty"
+    match app-id="code"
+    match app-id="dev.zed.Zed"
+
+    focus-ring {
+        active-color "#fab387"
+        inactive-color "#181825"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 12
     clip-to-geometry true
 }
 
 binds {
-    // Keys consist of modifiers separated by + signs, followed by an XKB key name
-    // in the end. To find an XKB name for a particular key, you may use a program
-    // like wev.
-    //
-    // "Mod" is a special modifier equal to Super when running on a TTY, and to Alt
-    // when running as a winit window.
-    //
-    // Most actions that you can bind here can also be invoked programmatically with
-    // `niri msg action do-something`.
-    Mod+Shift+Slash { show-hotkey-overlay; }
-
     Super+L   hotkey-overlay-title="Lock the Screen: Nocatalia Shell Lockscreen" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+T     hotkey-overlay-title="Launch Kitty" { spawn "kitty"; }
     Mod+S     hotkey-overlay-title="Open Nocatalia Shell Control Center" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
     Mod+Space hotkey-overlay-title="Open Nocatalia Shell Launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
 
