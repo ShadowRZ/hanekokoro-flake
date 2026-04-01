@@ -34,6 +34,7 @@
               hanekokoro-sans
               hanekokoro-mono
               hanekokoro-mono-e
+              hanekokoro-mono-k
             ];
             fontconfig = {
               defaultFonts = lib.mkForce {

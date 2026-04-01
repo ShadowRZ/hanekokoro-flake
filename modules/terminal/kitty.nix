@@ -4,7 +4,7 @@
       enable = true;
       enableGitIntegration = true;
       font = {
-        name = "Hanekokoro Mono";
+        name = "Hanekokoro Mono-K";
         size = 16.0;
       };
       settings = {
