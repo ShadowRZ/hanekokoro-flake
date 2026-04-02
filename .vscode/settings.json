@@ -24,9 +24,8 @@
         "perSystem": {
           "expr": "(builtins.getFlake (builtins.toString ./.)).currentSystem.options"
         },
-        // Home Manager
-        "nixOnDroid": {
-          "expr": "(builtins.getFlake (builtins.toString ./.)).nixOnDroidConfigurations.akasha.options"
+        "nixvim": {
+          "expr": "(builtins.getFlake (builtins.toString ./.)).packages.${builtins.currentSystem}.nixvim.options"
         }
       }
     }
