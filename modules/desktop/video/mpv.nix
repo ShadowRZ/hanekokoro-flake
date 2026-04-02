@@ -31,7 +31,7 @@
           };
           scriptOpts = {
             console = {
-              font = "Hanekokoro Mono";
+              monospace_font = "Hanekokoro Mono";
               font_size = 24;
             };
             stats = {
