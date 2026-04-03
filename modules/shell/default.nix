@@ -9,6 +9,7 @@
     programs.jq.enable = true;
     programs.fd.enable = true;
     programs.yt-dlp.enable = true;
+    programs.zoxide.enable = true;
 
     home.shellAliases = {
       df = "df -h";
