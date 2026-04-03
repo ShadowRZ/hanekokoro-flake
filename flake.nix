@@ -32,13 +32,9 @@
         nixpkgs-stable.follows = ""; # Only used for Nix Community Hydra jobs
       };
     };
-    firefox-addons-nix = {
-      url = "github:petrkozorezov/firefox-addons-nix";
-      inputs = {
-        # Unused
-        flake-utils.follows = "";
-        nixpkgs.follows = "nixpkgs";
-      };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "";
     };
     home-manager = {
       url = "github:nix-community/home-manager";

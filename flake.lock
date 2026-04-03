@@ -94,25 +94,24 @@
         "type": "github"
       }
     },
-    "firefox-addons-nix": {
+    "firefox-addons": {
       "inputs": {
-        "flake-utils": [],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1775179134,
-        "narHash": "sha256-51f69u3Mf1maOH2jU9MAYsjlHjGB5Q3k23hJPMlspvM=",
-        "owner": "petrkozorezov",
-        "repo": "firefox-addons-nix",
-        "rev": "6935f06b5624e0ad430b68c0e692df4d3626e0e7",
-        "type": "github"
+        "dir": "pkgs/firefox-addons",
+        "lastModified": 1775189004,
+        "narHash": "sha256-6CZuk2ChoYS2g97AuLw8caJwE2ta3SNoMPCKw/ptZdw=",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "rev": "d9f69eef7d004744bf402d1e0e00e7e020636808",
+        "type": "gitlab"
       },
       "original": {
-        "owner": "petrkozorezov",
-        "repo": "firefox-addons-nix",
-        "type": "github"
+        "dir": "pkgs/firefox-addons",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "type": "gitlab"
       }
     },
     "flake-parts": {
@@ -399,7 +398,7 @@
         "crane": "crane",
         "disko": "disko",
         "emacs-overlay": "emacs-overlay",
-        "firefox-addons-nix": "firefox-addons-nix",
+        "firefox-addons": "firefox-addons",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
