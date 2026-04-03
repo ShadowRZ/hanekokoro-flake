@@ -3,6 +3,8 @@
   flake.modules = {
     # Nixvim Defaults
     nixvim.default = _: {
+      impureRtp = true;
+
       opts = {
         title = true;
         number = true;
@@ -92,6 +94,8 @@
         imports = [
           config.flake.modules.nixvim.default
         ];
+
+        package = inputs.neovim-overlay.packages.${system}.default;
       };
     };
 }
