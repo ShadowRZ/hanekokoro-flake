@@ -23,7 +23,22 @@
           indent.enable = true;
           folding.enable = true;
         };
+        treesitter-textobjects = {
+          enable = true;
+        };
         lualine = {
+          enable = true;
+        };
+        comment = {
+          enable = true;
+        };
+        parinfer-rust = {
+          enable = true;
+        };
+        nvim-bqf = {
+          enable = true;
+        };
+        nvim-surround = {
           enable = true;
         };
       };

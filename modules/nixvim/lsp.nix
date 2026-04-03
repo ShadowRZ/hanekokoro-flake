@@ -1,7 +1,7 @@
 {
   flake.modules.nixvim.default = _: {
     plugins = {
-      lsp = {
+      lspconfig = {
         enable = true;
       };
     };
