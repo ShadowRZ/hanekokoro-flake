@@ -15,5 +15,10 @@
       hardware.graphics.enable32Bit = true;
 
       environment.systemPackages = [ config.programs.steam.package.run ];
+
+      hanekokoro.nixos.allowedUnfreePredicates = [
+        "steam"
+        "steam-unwrapped"
+      ];
     };
 }

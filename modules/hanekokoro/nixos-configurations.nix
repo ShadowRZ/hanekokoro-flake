@@ -5,6 +5,49 @@
 }:
 let
   cfg = config.hanekokoro.nixos;
+  hanekokoroModule =
+    { config, lib, ... }:
+    let
+      cfg = config.hanekokoro.nixos;
+      inherit (lib) types mkOption;
+    in
+    {
+      _file = "modules/hanekokoro/nixos-configurations.nix";
+      _class = "nixos";
+
+      options.hanekokoro.nixos = mkOption {
+        type = types.submodule {
+          options = {
+            allowedUnfreePredicates = mkOption {
+              type = types.listOf types.str;
+              example = [ "example-unfree-package" ];
+              description = ''
+                A list of unfree derivation names that are allowed.
+
+                Equivelant to defining `nixpkgs.config.allowUnfreePredicate` as follows:
+
+                ```nix
+                {
+                  nixpkgs.config.allowUnfreePredicate =
+                    pkg:
+                    builtins.elem (lib.getName pkg) [ /* allowedUnfreePredicates */];
+                }
+                ```
+              '';
+            };
+          };
+        };
+        description = ''
+          NixOS local configuration.
+        '';
+      };
+
+      config = {
+        # Unfree predicates
+        nixpkgs.config.allowUnfreePredicate =
+          pkg: builtins.elem (lib.getName pkg) cfg.allowedUnfreePredicates;
+      };
+    };
 in
 {
   config = {
@@ -36,14 +79,14 @@ in
               };
             }
           )
+          # Import system local config
+          (config.flake.modules.nixos."hosts/${name}" or { })
+          # Import NixOS local module
+          hanekokoroModule
           (
             { lib, ... }:
             {
-              # Import system local config
-              imports = [
-                (config.flake.modules.nixos."hosts/${name}" or { })
-              ];
-
+              # Hostname
               networking.hostName = lib.mkDefault name;
             }
           )

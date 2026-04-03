@@ -19,5 +19,7 @@
       ];
 
       services.xserver.videoDrivers = [ "nvidia" ];
+
+      hanekokoro.nixos.allowedUnfreePredicates = [ "nvidia-x11" ];
     };
 }

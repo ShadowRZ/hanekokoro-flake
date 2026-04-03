@@ -137,4 +137,8 @@
         };
       };
     };
+
+  flake.modules.nixos.desktop = {
+    hanekokoro.nixos.allowedUnfreePredicates = [ "wappalyzer" ];
+  };
 }
