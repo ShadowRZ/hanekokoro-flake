@@ -32,7 +32,6 @@
       environment.systemPackages = [
         pkgs.dconf-editor
         pkgs.xwayland-satellite
-        pkgs.shadowrz.silent-sddm
         pkgs.nautilus
       ];
 

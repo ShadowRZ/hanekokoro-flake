@@ -8,13 +8,10 @@
 
         overlays = [
           # keep-sorted start
-          inputs.blender-bin.overlays.default
           inputs.emacs-overlay.overlays.default
           inputs.firefox-addons-nix.overlays.default
           inputs.neovim-overlay.overlays.default
           inputs.nix-indexdb.overlays.nix-index
-          inputs.rust-overlay.overlays.default
-          inputs.self.overlays.default
           inputs.shadowrz.overlays.default
           # keep-sorted end
         ];
