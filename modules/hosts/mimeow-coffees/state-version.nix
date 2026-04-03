@@ -8,7 +8,7 @@
     # REALLY NECESSARY reason to do this) read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html)
     # and release notes, SERIOUSLY.
-    system.stateVersion = "25.05"; # Did you read the comment?
+    system.stateVersion = "26.05"; # Did you read the comment?
   };
 
   flake.modules.homeManager."hosts/mimeow-coffees" = _: {
@@ -20,6 +20,6 @@
     # You can update Home Manager without changing this value. See
     # the Home Manager release notes for a list of state version
     # changes in each release.
-    home.stateVersion = "25.05";
+    home.stateVersion = "26.05";
   };
 }
