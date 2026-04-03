@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.desktop =
-    { config, ... }:
+    { config, pkgs, ... }:
     {
       xdg = {
         mime.enable = true;
@@ -8,6 +8,7 @@
           enable = true;
           defaultApplicationPackages = [
             config.programs.mpv.package
+            pkgs.file-roller
           ];
           defaultApplications = {
             "text/html" = "firefox.desktop";

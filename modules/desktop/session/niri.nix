@@ -33,6 +33,7 @@
         pkgs.dconf-editor
         pkgs.xwayland-satellite
         pkgs.nautilus
+        pkgs.file-roller
       ];
 
       programs = {
