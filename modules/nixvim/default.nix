@@ -1,89 +1,87 @@
 { inputs, config, ... }:
 {
-  flake.modules = {
-    # Nixvim Defaults
-    nixvim.default = _: {
-      impureRtp = true;
+  # Nixvim Defaults
+  flake.modules.nixvim.default = _: {
+    impureRtp = true;
 
-      opts = {
-        title = true;
-        number = true;
-        mouse = "a";
-        background = "dark";
-        termguicolors = true;
+    opts = {
+      title = true;
+      number = true;
+      mouse = "a";
+      background = "dark";
+      termguicolors = true;
 
-        tabstop = 8;
-        shiftwidth = 4;
-        softtabstop = 4;
-        expandtab = true;
-      };
-
-      plugins = {
-        treesitter = {
-          enable = true;
-          highlight.enable = true;
-          indent.enable = true;
-          folding.enable = true;
-        };
-        treesitter-textobjects = {
-          enable = true;
-        };
-        lualine = {
-          enable = true;
-        };
-        comment = {
-          enable = true;
-        };
-        parinfer-rust = {
-          enable = true;
-        };
-        nvim-bqf = {
-          enable = true;
-        };
-        nvim-surround = {
-          enable = true;
-        };
-      };
+      tabstop = 8;
+      shiftwidth = 4;
+      softtabstop = 4;
+      expandtab = true;
     };
 
-    # Used to import Nixvim.
-    nixos.nixvim = {
-      imports = [
-        inputs.nixvim.nixosModules.nixvim
-      ];
-
-      programs.nixvim = {
-        imports = [
-          config.flake.modules.nixvim.default
-        ];
-
+    plugins = {
+      treesitter = {
         enable = true;
-        defaultEditor = true;
-        vimAlias = true;
-        viAlias = true;
-        vimdiffAlias = true;
-        nixpkgs.useGlobalPackages = true;
+        highlight.enable = true;
+        indent.enable = true;
+        folding.enable = true;
+      };
+      treesitter-textobjects = {
+        enable = true;
+      };
+      lualine = {
+        enable = true;
+      };
+      comment = {
+        enable = true;
+      };
+      parinfer-rust = {
+        enable = true;
+      };
+      nvim-bqf = {
+        enable = true;
+      };
+      nvim-surround = {
+        enable = true;
       };
     };
+  };
 
-    # Used to import Nixvim.
-    homeManager.nixvim = {
+  # Used to import Nixvim.
+  flake.modules.nixos.nixvim = {
+    imports = [
+      inputs.nixvim.nixosModules.nixvim
+    ];
+
+    programs.nixvim = {
       imports = [
-        inputs.nixvim.homeModules.nixvim
+        config.flake.modules.nixvim.default
       ];
 
-      programs.nixvim = {
-        imports = [
-          config.flake.modules.nixvim.default
-        ];
+      enable = true;
+      defaultEditor = true;
+      vimAlias = true;
+      viAlias = true;
+      vimdiffAlias = true;
+      nixpkgs.useGlobalPackages = true;
+    };
+  };
 
-        enable = true;
-        defaultEditor = true;
-        vimAlias = true;
-        viAlias = true;
-        vimdiffAlias = true;
-        nixpkgs.useGlobalPackages = true;
-      };
+  # Used to import Nixvim.
+  flake.modules.homeManager.nixvim = {
+    imports = [
+      inputs.nixvim.homeModules.nixvim
+    ];
+
+    programs.nixvim = {
+      imports = [
+        config.flake.modules.nixvim.default
+      ];
+
+      enable = true;
+      defaultEditor = true;
+      vimAlias = true;
+      viAlias = true;
+      vimdiffAlias = true;
+      nixpkgs.useGlobalPackages = true;
     };
   };
 
