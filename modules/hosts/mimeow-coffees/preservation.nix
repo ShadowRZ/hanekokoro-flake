@@ -42,7 +42,6 @@
                   ".cache"
                   ".cargo"
                   ".conda"
-                  ".config/Code"
                   ".config/GIMP"
                   ".config/Google"
                   ".config/Throne"
@@ -90,7 +89,6 @@
                   ".mozilla/firefox/default"
                   ".renpy"
                   ".thunderbird/default"
-                  ".vscode"
                   # keep-sorted end
                   {
                     directory = ".gnupg";

@@ -3,6 +3,7 @@
   # Nixvim Defaults
   flake.modules.nixvim.default = _: {
     impureRtp = true;
+    withRuby = false;
 
     opts = {
       title = true;
@@ -43,6 +44,8 @@
         enable = true;
       };
     };
+
+    dependencies.git.enable = false;
   };
 
   # Used to import Nixvim.

@@ -47,7 +47,6 @@
             # keep-sorted start
             cntr
             dix
-            ffmpeg-full # FFmpeg
             hugo # Hugo
             nh
             nix-output-monitor

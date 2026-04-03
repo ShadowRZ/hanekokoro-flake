@@ -38,12 +38,14 @@
             ];
           };
           enable = true;
+          package = null;
         };
         lua_ls = {
           enable = true;
         };
         rust_analyzer = {
           enable = true;
+          package = null;
         };
         nixd = {
           enable = true;

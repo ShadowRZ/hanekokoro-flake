@@ -14,7 +14,6 @@
             "x-scheme-handler/http" = "firefox.desktop";
             "x-scheme-handler/https" = "firefox.desktop";
             "x-scheme-handler/mailto" = "thunderbird.desktop";
-            "x-scheme-handler/vscode" = "code-url-handler.desktop";
           };
         };
       };
