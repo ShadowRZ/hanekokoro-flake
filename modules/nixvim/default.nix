@@ -16,6 +16,13 @@
       shiftwidth = 4;
       softtabstop = 4;
       expandtab = true;
+
+      guifont = "Hanekokoro Mono:h16";
+    };
+
+    # Neovide
+    globals = {
+      neovide_cursor_vfx_mode = "pixiedust";
     };
 
     plugins = {
