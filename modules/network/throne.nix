@@ -4,5 +4,7 @@
       enable = true;
       tunMode.enable = true;
     };
+
+    hanekokoro.nixos.preservation.user.directories = [ ".config/Throne" ];
   };
 }

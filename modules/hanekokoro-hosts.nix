@@ -22,6 +22,7 @@
           "network/networkmanager"
           "network/throne"
           "nix"
+          "preservation"
           "security/gnupg"
           "security/lanzaboote"
           "security/pam-fido2"

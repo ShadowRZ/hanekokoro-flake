@@ -1,6 +1,15 @@
 {
   flake.modules.nixos.shell = _: {
     programs.fish.enable = true;
+
+    hanekokoro.nixos.preservation.user = {
+      directories = [
+        ".local/share/zoxide"
+      ];
+      files = [
+        ".local/share/fish/fish_history"
+      ];
+    };
   };
 
   flake.modules.homeManager.shell = _: {

@@ -1,6 +1,13 @@
 {
   flake.modules.nixos."security/gnupg" = _: {
     services.pcscd.enable = true;
+
+    hanekokoro.nixos.preservation.user.directories = [
+      {
+        directory = ".gnupg";
+        mode = "0700";
+      }
+    ];
   };
 
   flake.modules.homeManager."security/gnupg" =

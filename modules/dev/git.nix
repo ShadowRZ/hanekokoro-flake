@@ -37,4 +37,8 @@
         };
       };
     };
+
+  flake.modules.nixos.dev = {
+    hanekokoro.nixos.preservation.user.files = [ ".config/gh/hosts.yml" ];
+  };
 }

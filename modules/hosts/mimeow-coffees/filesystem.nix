@@ -8,6 +8,8 @@
           inputs.disko.nixosModules.disko
         ];
 
+        hanekokoro.nixos.preservation.location = "/persist";
+
         disko.devices = {
           disk = {
             rootfs = {

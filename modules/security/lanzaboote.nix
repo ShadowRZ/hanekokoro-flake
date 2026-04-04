@@ -26,7 +26,10 @@
 
       boot.lanzaboote = {
         enable = true;
-        pkiBundle = lib.mkDefault "/var/lib/sbctl";
+        pkiBundle = lib.mkDefault "/persist/var/lib/sbctl";
       };
+
+      # Setup a mount point at /var/lib/sbctl
+      hanekokoro.nixos.preservation.directories = [ "/var/lib/sbctl" ];
     };
 }

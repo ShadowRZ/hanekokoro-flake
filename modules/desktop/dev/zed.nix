@@ -14,4 +14,11 @@
         ]);
       };
     };
+
+  flake.modules.nixos.desktop = {
+    hanekokoro.nixos.preservation.user.directories = [
+      ".config/zed"
+      ".local/share/zed"
+    ];
+  };
 }

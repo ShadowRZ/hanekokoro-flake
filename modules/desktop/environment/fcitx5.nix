@@ -18,6 +18,12 @@
         };
       };
 
-      hanekokoro.nixos.allowedUnfreePredicates = [ "fcitx5-pinyin-moegirl" ];
+      hanekokoro.nixos = {
+        allowedUnfreePredicates = [ "fcitx5-pinyin-moegirl" ];
+        preservation.user.directories = [
+          ".config/fcitx5"
+          ".local/share/fcitx5"
+        ];
+      };
     };
 }

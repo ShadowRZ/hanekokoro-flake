@@ -5,6 +5,8 @@
     {
       imports = [ inputs.nixos-sensible.nixosModules.zram ];
 
+      hanekokoro.nixos.user = "shadowrz";
+
       boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
 
       time.timeZone = "Asia/Shanghai";
@@ -97,5 +99,10 @@
           # keep-sorted end
         ];
       };
+
+      hanekokoro.nixos.preservation.directories = [
+        "/var/lib/systemd"
+        "/var/lib/zerotier-one"
+      ];
     };
 }

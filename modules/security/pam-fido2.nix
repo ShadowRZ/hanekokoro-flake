@@ -13,5 +13,7 @@
         };
       };
     };
+
+    hanekokoro.nixos.preservation.user.files = [ ".config/Yubico/u2f_keys" ];
   };
 }

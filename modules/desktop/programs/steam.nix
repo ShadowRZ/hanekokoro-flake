@@ -20,5 +20,8 @@
         "steam"
         "steam-unwrapped"
       ];
+      hanekokoro.nixos.preservation.user.directories = [
+        ".local/share/Steam"
+      ];
     };
 }

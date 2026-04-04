@@ -1,6 +1,6 @@
 {
   flake.modules.nixos."virt/libvirt" =
-    { pkgs, ... }:
+    { config, pkgs, ... }:
     {
       virtualisation = {
         # Libvirtd
@@ -18,13 +18,30 @@
         spiceUSBRedirection.enable = true;
       };
 
-      networking.firewall.trustedInterfaces = [ "virbr0" ];
+      networking.firewall.trustedInterfaces = [ "virbr*" ];
 
-      # Users
-      users.users.shadowrz.extraGroups = [ "libvirtd" ];
+      users.users.${config.hanekokoro.nixos.user}.extraGroups = [
+        "kvm"
+        "libvirtd"
+      ];
 
       services.pykms.enable = true;
 
       programs.virt-manager.enable = true;
+
+      systemd.tmpfiles.rules = [
+        "L+ /var/lib/pykms - root root - private/pykms"
+      ];
+
+      hanekokoro.nixos.preservation.directories = [
+        "/var/lib/fwupd"
+        "/var/lib/libvirt"
+        "/var/lib/swtpm-localca"
+        {
+          directory = "/var/lib/private/pykms";
+          user = "pykms";
+          group = "pykms";
+        }
+      ];
     };
 }

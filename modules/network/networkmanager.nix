@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."network/networkmanager" = {
+  flake.modules.nixos."network/networkmanager" = _: {
     networking.networkmanager = {
       enable = true;
       dns = "systemd-resolved";
@@ -20,5 +20,10 @@
         "lo"
       ];
     };
+
+    hanekokoro.nixos.preservation.directories = [
+      "/var/lib/NetworkManager"
+      "/var/lib/iwd"
+    ];
   };
 }

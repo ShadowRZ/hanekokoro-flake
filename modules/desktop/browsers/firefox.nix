@@ -140,5 +140,7 @@
 
   flake.modules.nixos.desktop = {
     hanekokoro.nixos.allowedUnfreePredicates = [ "wappalyzer" ];
+
+    hanekokoro.nixos.preservation.user.directories = [ ".thunderbird/default" ];
   };
 }

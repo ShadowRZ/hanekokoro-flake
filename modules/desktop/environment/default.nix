@@ -31,6 +31,41 @@
           # keep-sorted end
         ];
       };
+
+      hanekokoro.nixos.preservation.user.directories = [
+        {
+          directory = ".ssh";
+          mode = "0700";
+        }
+
+        # keep-sorted start
+        ".config/GIMP"
+        ".config/blender"
+        ".config/borg"
+        ".config/chromium"
+        ".config/dconf"
+        ".config/godot"
+        ".config/inkscape"
+        ".config/onlyoffice"
+        ".config/pika-backup"
+        ".config/quodlibet"
+        ".local/share/applications"
+        ".local/share/fonts"
+        ".local/share/fractal"
+        ".local/share/godot"
+        ".local/share/onlyoffice"
+        ".local/share/pki"
+        "Desktop"
+        "Documents"
+        "Downloads"
+        "Music"
+        "Pictures"
+        "Projects"
+        "Public"
+        "Templates"
+        "Videos"
+        # keep-sorted end
+      ];
     };
 
   flake.modules.homeManager.desktop =

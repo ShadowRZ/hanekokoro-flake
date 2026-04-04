@@ -8,5 +8,10 @@
       };
 
       networking.firewall.trustedInterfaces = [ "waydroid0" ];
+
+      hanekokoro.nixos.preservation = {
+        directories = [ "/var/lib/waydroid" ];
+        user.directories = [ ".local/share/waydroid" ];
+      };
     };
 }

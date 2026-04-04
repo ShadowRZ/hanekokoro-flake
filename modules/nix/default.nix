@@ -56,5 +56,7 @@
         };
       };
     };
+
+    hanekokoro.nixos.preservation.user.files = [ ".config/nix/nix.conf" ];
   };
 }

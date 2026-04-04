@@ -98,6 +98,19 @@
           };
         };
       };
+
+      hanekokoro.nixos.preservation = {
+        directories = [
+          "/var/lib/upower"
+        ];
+        user.directories = [
+          ".config/noctalia"
+          ".config/qt5ct"
+          ".config/qt6ct"
+          ".local/share/keyrings"
+          ".local/share/nautilus"
+        ];
+      };
     };
 
   flake.modules.homeManager."desktop/niri" = {
