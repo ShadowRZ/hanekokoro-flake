@@ -43,6 +43,7 @@
             { inputs', ... }: inputs'.niri.packages.default
           );
         };
+        nm-applet.enable = true;
         silentSDDM = {
           enable = true;
           theme = "silvia";
