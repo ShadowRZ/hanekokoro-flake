@@ -3,6 +3,7 @@
     networking.networkmanager = {
       enable = true;
       dns = "systemd-resolved";
+      wifi.backend = "iwd";
       settings = {
         keyfile = {
           path = "/var/lib/NetworkManager/system-connections";
