@@ -32,7 +32,7 @@
             gtk3.extraConfig = gtkIni;
             gtk4.extraConfig = gtkIni;
             iconTheme = {
-              name = "Papirus-Light";
+              name = "Numix-Square";
             };
             theme = {
               name = "adw-gtk3";
