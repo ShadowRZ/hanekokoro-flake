@@ -27,6 +27,7 @@ input {
         scroll-method "two-finger"
     }
 }
+
 layout {
     gaps 16
     center-focused-column "never"
@@ -77,6 +78,11 @@ layer-rule {
 }
 
 window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+window-rule {
     match app-id="org.gnome.World.Secrets"
     match app-id="org.gnome.Fractal"
 
@@ -95,15 +101,19 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 12
+    match app-id="rmmv-game"
+    match app-id="rmmz-game"
+
+    geometry-corner-radius 0
     clip-to-geometry true
+    open-floating true
 }
 
 binds {
-    Super+L   hotkey-overlay-title="Lock the Screen: Nocatalia Shell Lockscreen" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-    Mod+T     hotkey-overlay-title="Launch Kitty" { spawn "kitty"; }
-    Mod+S     hotkey-overlay-title="Open Nocatalia Shell Control Center" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
-    Mod+Space hotkey-overlay-title="Open Nocatalia Shell Launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Super+L   { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+T     { spawn "kitty"; }
+    Mod+S     { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+    Mod+Space { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
 
     XF86AudioRaiseVolume  allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
     XF86AudioLowerVolume  allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
