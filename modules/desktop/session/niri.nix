@@ -105,8 +105,6 @@
         ];
         user.directories = [
           ".config/noctalia"
-          ".config/qt5ct"
-          ".config/qt6ct"
           ".local/share/keyrings"
           ".local/share/nautilus"
         ];
