@@ -9,7 +9,7 @@
         systemPackages = with pkgs; [
           adw-gtk3
           wl-clipboard
-          numix-icon-theme-square
+          numix-icon-theme-circle
         ];
       };
 
