@@ -3,7 +3,7 @@
   ...
 }:
 let
-  inherit (lib) types mkOption;
+  inherit (lib) types mkOption mkEnableOption;
 in
 {
   options = {
@@ -11,17 +11,16 @@ in
       type = types.attrsOf (
         types.submodule {
           options = {
-            useHomeManager = mkOption {
-              type = types.bool;
-              default = true;
-              example = false;
-              description = ''
-                Whether to include Home Manager support for this NixOS configuration.
+            useHomeManager =
+              mkEnableOption ''
+                Home Manager support for this NixOS configuration.
 
-                Usually should be set to `true`, though setting to `false` can be useful
-                if you're defining a server configuration.
-              '';
-            };
+                Usually should be set to `true`,
+                though setting to `false` can be useful
+                if you're defining a server configuration''
+              // {
+                default = true;
+              };
             modules = mkOption {
               type = types.listOf types.str;
               example = [ "base" ];
@@ -35,7 +34,6 @@ in
             };
           };
         }
-
       );
       description = ''
         Define a set of NixOS hosts.

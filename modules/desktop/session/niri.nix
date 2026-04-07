@@ -1,4 +1,4 @@
-{ inputs, withSystem, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixos."desktop/niri" =
     {
@@ -37,12 +37,7 @@
       ];
 
       programs = {
-        niri = {
-          enable = true;
-          package = withSystem pkgs.stdenv.hostPlatform.system (
-            { inputs', ... }: inputs'.niri.packages.default
-          );
-        };
+        niri.enable = true;
         nm-applet.enable = true;
         silentSDDM = {
           enable = true;
@@ -111,16 +106,21 @@
       };
     };
 
-  flake.modules.homeManager."desktop/niri" = {
-    imports = [ inputs.noctalia-shell.homeModules.default ];
+  flake.modules.homeManager."desktop/niri" =
+    { pkgs, ... }:
+    {
+      imports = [ inputs.noctalia-shell.homeModules.default ];
 
-    programs.noctalia-shell.enable = true;
+      programs.noctalia-shell = {
+        enable = true;
+        package = pkgs.noctalia-shell;
+      };
 
-    qt = {
-      enable = true;
-      platformTheme.name = "qtct";
+      qt = {
+        enable = true;
+        platformTheme.name = "qtct";
+      };
+
+      home.file.".config/niri/config.kdl".source = ./niri.kdl;
     };
-
-    home.file.".config/niri/config.kdl".source = ./niri.kdl;
-  };
 }
