@@ -5,7 +5,7 @@ format:
   nix --extra-experimental-features 'nix-command flakes' fmt --verbose -L
 
 build:
-  nix build --verbose -L "{{ `nix eval .#nixosConfigurations.mimeow-coffees.config.system.build.toplevel.outPath --raw` }}" --no-link
+  nh os boot . -- --no-link --option always-allow-substitutes true
 
-switch: build
-  nh os switch .
+switch:
+  nh os switch . -- --no-link --option always-allow-substitutes true
