@@ -9,7 +9,6 @@
         settings = {
           builders-use-substitutes = true;
           auto-optimise-store = true;
-          trusted-users = [ "@wheel" ];
           keep-derivations = true;
           experimental-features = [
             "auto-allocate-uids"

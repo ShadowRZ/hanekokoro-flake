@@ -100,6 +100,11 @@
         ];
       };
 
+      nix.settings.substituters = [
+        "https://mirrors.ustc.edu.cn/nix-channels/store"
+        "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store"
+      ];
+
       hanekokoro.nixos.preservation.directories = [
         "/var/lib/systemd"
         "/var/lib/zerotier-one"
