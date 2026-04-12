@@ -273,6 +273,33 @@
         "type": "github"
       }
     },
+    "nix-on-droid": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nix-formatter-pack": [],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-docs": [],
+        "nixpkgs-for-bootstrap": [],
+        "nmd": []
+      },
+      "locked": {
+        "lastModified": 1765031149,
+        "narHash": "sha256-4ZtlnCp4blhsjGnQIxAXDAj7nCJKy7tozoBRtklmwcU=",
+        "owner": "nix-community",
+        "repo": "nix-on-droid",
+        "rev": "55b6449b4582a4ba3ce712543c973360a026db7d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-on-droid",
+        "type": "github"
+      }
+    },
     "nixos-sensible": {
       "locked": {
         "lastModified": 1711451092,
@@ -406,6 +433,7 @@
         "neovim-overlay": "neovim-overlay",
         "niri": "niri",
         "nix-indexdb": "nix-indexdb",
+        "nix-on-droid": "nix-on-droid",
         "nixos-sensible": "nixos-sensible",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
