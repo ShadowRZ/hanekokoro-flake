@@ -11,7 +11,7 @@
     };
     # keep-sorted start block=yes
     blender-bin = {
-      url = "github:edolstra/nix-warez?dir=blender";
+      url = "github:ShadowRZ/nix-kotone?dir=blender-bin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin-nix = {

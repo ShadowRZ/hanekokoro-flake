@@ -7,18 +7,18 @@
         ]
       },
       "locked": {
-        "dir": "blender",
-        "lastModified": 1766785730,
-        "narHash": "sha256-R0SImlpvVtp4gBCjWtrjyWlir2vMEs03XdVBJtsryUU=",
-        "owner": "edolstra",
-        "repo": "nix-warez",
-        "rev": "32a73188c4026cea3f8ed97078ace45bf9f7f578",
+        "dir": "blender-bin",
+        "lastModified": 1775960510,
+        "narHash": "sha256-XfduJWxJcM1Vtm09QYcjeonOGQycwDnurt9cLgS/+FA=",
+        "owner": "ShadowRZ",
+        "repo": "nix-kotone",
+        "rev": "23143e7a5239de2dae33a0c522484563e5553fbe",
         "type": "github"
       },
       "original": {
-        "dir": "blender",
-        "owner": "edolstra",
-        "repo": "nix-warez",
+        "dir": "blender-bin",
+        "owner": "ShadowRZ",
+        "repo": "nix-kotone",
         "type": "github"
       }
     },
