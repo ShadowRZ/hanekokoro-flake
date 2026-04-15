@@ -6,6 +6,7 @@
 
       overlays = [
         # keep-sorted start
+        inputs.blender-bin.overlays.scoped
         inputs.emacs-overlay.overlays.default
         inputs.firefox-addons.overlays.default
         inputs.neovim-overlay.overlays.default

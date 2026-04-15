@@ -1,4 +1,3 @@
-{ inputs, ... }:
 {
   flake.modules.nixos.desktop =
     { pkgs, ... }:
@@ -23,7 +22,7 @@
           gimp3 # GIMP 3
           godot_4
           inkscape # Inkscape
-          inputs.blender-bin.packages.${pkgs.stdenv.hostPlatform.system}.blender_5_0 # Blender 5.0.* (Binary)
+          nix-kotone.blender-bin.blender_5_1 # Blender 5.1.* (Binary)
           onlyoffice-desktopeditors # ONLYOFFICE Desktop editors
           pika-backup
           quodlibet-full
