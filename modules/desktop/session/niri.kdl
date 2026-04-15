@@ -72,6 +72,15 @@ layer-rule {
     place-within-backdrop true
 }
 
+// [Nocatalia Shell] Drop blur on bars
+layer-rule {
+    match namespace="^noctalia-bar*"
+
+    background-effect {
+        blur false
+    }
+}
+
 layer-rule {
     match namespace="^notification$"
     block-out-from "screen-capture"
