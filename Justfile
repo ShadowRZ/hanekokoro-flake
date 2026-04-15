@@ -5,6 +5,9 @@ format:
   nix --extra-experimental-features 'nix-command flakes' fmt --verbose -L
 
 build:
+  nh os build . -- --no-link --option always-allow-substitutes true
+
+boot:
   nh os boot . -- --no-link --option always-allow-substitutes true
 
 switch:
