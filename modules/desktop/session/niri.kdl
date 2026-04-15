@@ -101,6 +101,14 @@ window-rule {
 }
 
 window-rule {
+    match app-id="dev.zed.Zed"
+
+    background-effect {
+        blur true
+    }
+}
+
+window-rule {
     match app-id="rmmv-game"
     match app-id="rmmz-game"
 
