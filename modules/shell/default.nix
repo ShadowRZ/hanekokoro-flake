@@ -4,6 +4,7 @@
 
     hanekokoro.nixos.preservation.user = {
       directories = [
+        ".config/carapace"
         ".local/share/zoxide"
       ];
       files = [
@@ -14,6 +15,7 @@
 
   flake.modules.homeManager.shell = _: {
     programs.aria2.enable = true;
+    programs.carapace.enable = true;
     programs.ripgrep.enable = true;
     programs.jq.enable = true;
     programs.fd.enable = true;
