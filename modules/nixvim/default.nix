@@ -5,6 +5,11 @@
     impureRtp = true;
     withRuby = false;
 
+    # Override Nixpkgs source with nixos-unstable-small
+    # Nixvim tests with nixpkgs-unstable branch, which can be behind nixos-unstable-small sometimes
+    # Allows for future regressions testing
+    nixpkgs.source = inputs.nixpkgs;
+
     opts = {
       title = true;
       number = true;

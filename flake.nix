@@ -89,6 +89,9 @@
       url = "github:nix-community/nixvim";
       inputs = {
         flake-parts.follows = "flake-parts";
+        # Override Nixpkgs source with nixos-unstable-small
+        # Nixvim tests with nixpkgs-unstable branch, which can be behind nixos-unstable-small sometimes
+        # Allows for future regressions testing
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
       };
