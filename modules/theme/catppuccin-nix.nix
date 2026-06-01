@@ -26,6 +26,12 @@
           enable = true;
           flavor = "latte";
         };
+        plymouth = {
+          enable = false;
+        };
+        sddm = {
+          enable = false;
+        };
         # keep-sorted end
       };
     };
@@ -57,6 +63,9 @@
         cursors = {
           enable = true;
           flavor = "latte";
+        };
+        firefox = {
+          enable = false;
         };
         gtk.icon = {
           flavor = "latte";
