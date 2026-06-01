@@ -6,6 +6,9 @@
       imports = [ inputs.catppuccin-nix.nixosModules.default ];
 
       catppuccin = {
+        enable = true;
+        autoEnable = true;
+
         accent = "rosewater";
         flavor = "mocha";
         sources =
@@ -21,6 +24,7 @@
         # keep-sorted start block=yes
         cursors = {
           enable = true;
+          flavor = "latte";
         };
         # keep-sorted end
       };
@@ -34,6 +38,9 @@
       ];
 
       catppuccin = {
+        enable = true;
+        autoEnable = true;
+
         accent = "rosewater";
         flavor = "mocha";
         sources =
@@ -51,24 +58,11 @@
           enable = true;
           flavor = "latte";
         };
-        delta = {
-          enable = true;
-        };
-        fish = {
-          enable = true;
-        };
-        kitty = {
-          enable = true;
-        };
-        mpv = {
-          enable = true;
-        };
-        obs = {
-          enable = true;
+        gtk.icon = {
           flavor = "latte";
         };
-        starship = {
-          enable = true;
+        obs = {
+          flavor = "latte";
         };
         # keep-sorted end
       };

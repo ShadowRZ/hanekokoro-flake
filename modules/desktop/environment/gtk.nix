@@ -31,9 +31,6 @@
             };
             gtk3.extraConfig = gtkIni;
             gtk4.extraConfig = gtkIni;
-            iconTheme = {
-              name = "Numix-Circle";
-            };
             theme = {
               name = "adw-gtk3";
             };

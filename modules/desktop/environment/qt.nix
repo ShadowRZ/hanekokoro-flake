@@ -7,7 +7,8 @@
           qtctSettings = {
             Appearance = {
               style = "Fusion";
-              icon_theme = "Numix-Circle";
+              # Sync with GTK
+              icon_theme = config.gtk.iconTheme.name;
               standard_dialogs = "xdgdesktopportal";
             };
             Fonts = {
