@@ -73,6 +73,9 @@
         obs = {
           flavor = "latte";
         };
+        kvantum = {
+          flavor = "latte";
+        };
         # keep-sorted end
       };
     };
