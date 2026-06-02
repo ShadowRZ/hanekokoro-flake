@@ -70,10 +70,10 @@
         gtk.icon = {
           flavor = "latte";
         };
-        obs = {
+        kvantum = {
           flavor = "latte";
         };
-        kvantum = {
+        obs = {
           flavor = "latte";
         };
         # keep-sorted end

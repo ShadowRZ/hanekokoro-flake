@@ -1,6 +1,6 @@
 {
   flake.modules.nixos."terminal/kmscon" =
-    { pkgs, ... }:
+    _:
     {
       services.kmscon = {
         enable = true;
@@ -8,8 +8,7 @@
         useXkbConfig = true;
         term = "xterm-256color";
         config = {
-          font-dpi = 144;
-          font-size = 16;
+          font-size = 24;
           font-name = "Hanekokoro Mono";
 
           # Catppuccin Mocha
