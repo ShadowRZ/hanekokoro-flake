@@ -20,8 +20,6 @@
         lib.mkIf (config.qt.platformTheme.name == "qtct") {
           qt5ctSettings = qtctSettings;
           qt6ctSettings = qtctSettings;
-
-          style.name = "kvantum";
         };
     };
 }

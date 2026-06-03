@@ -72,6 +72,7 @@
         };
         kvantum = {
           flavor = "latte";
+          assertStyle = false;
         };
         obs = {
           flavor = "latte";
