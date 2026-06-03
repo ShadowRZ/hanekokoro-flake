@@ -12,7 +12,7 @@
               standard_dialogs = "xdgdesktopportal";
             };
             Fonts = {
-              fixed = "\"Hanekokoro Mono,13,Extended\"";
+              fixed = "\"Hanekokoro Mono,12,-1,5,50,0,0,0,0,0,Extended\"";
               general = "\"Space Grotesk,12\"";
             };
           };
