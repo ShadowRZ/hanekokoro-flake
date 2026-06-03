@@ -57,8 +57,6 @@ layout {
     }
 }
 
-prefer-no-csd
-
 screenshot-path "~/Pictures/Screenshots/Screenshots_%Y-%m-%d_%H-%M-%S.png"
 
 window-rule {
@@ -124,6 +122,8 @@ window-rule {
     background-effect {
         blur true
     }
+
+    draw-border-with-background false
 }
 
 window-rule {
