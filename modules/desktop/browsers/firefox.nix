@@ -116,8 +116,8 @@
                 streetpass-for-mastodon
                 # https://addons.mozilla.org/firefox/addon/stylus/
                 stylus
-                # https://addons.mozilla.org/firefox/addon/tabliss/
-                tabliss
+                # https://addons.mozilla.org/firefox/addon/tablissng/
+                tablissng
                 # https://addons.mozilla.org/firefox/addon/tranquility-1/
                 tranquility-1
                 # https://addons.mozilla.org/firefox/addon/ublock-origin-upstream/
