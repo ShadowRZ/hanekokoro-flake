@@ -2,12 +2,13 @@
   flake.modules.nixos."terminal/kmscon" = _: {
     services.kmscon = {
       enable = true;
-      hwRender = true;
       useXkbConfig = true;
-      term = "xterm-256color";
       config = {
         font-size = 24;
         font-name = "Hanekokoro Mono";
+
+        hwaccel = true;
+        term = "xterm-256color";
 
         # Catppuccin Mocha
         palette = "custom";
