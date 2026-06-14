@@ -1,7 +1,4 @@
 {
-  flake.overlays.default = final: prev: {
-    neovim-unwrapped = prev.neovim-unwrapped.overrideAttrs {
-      patches = [ ];
-    };
+  flake.overlays.default = _final: _prev: {
   };
 }
