@@ -75,7 +75,6 @@
       defaultEditor = true;
       vimAlias = true;
       viAlias = true;
-      vimdiffAlias = true;
       nixpkgs.useGlobalPackages = true;
     };
   };
@@ -95,7 +94,6 @@
       defaultEditor = true;
       vimAlias = true;
       viAlias = true;
-      vimdiffAlias = true;
       nixpkgs.useGlobalPackages = true;
     };
   };
