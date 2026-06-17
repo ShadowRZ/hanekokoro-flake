@@ -71,17 +71,6 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "";
     };
-    nix-on-droid = {
-      url = "github:nix-community/nix-on-droid";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-        nixpkgs-docs.follows = "";
-        nix-formatter-pack.follows = "";
-        nmd.follows = "";
-        nixpkgs-for-bootstrap.follows = "";
-      };
-    };
     nixos-sensible = {
       url = "github:Guanran928/nixos-sensible";
     };
@@ -99,7 +88,7 @@
     noctalia-shell = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "";
       };
     };
     preservation = {
@@ -115,7 +104,7 @@
     };
     silent-sddm = {
       url = "github:uiriansan/SilentSDDM";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
