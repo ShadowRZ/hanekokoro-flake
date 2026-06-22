@@ -64,7 +64,6 @@
       url = "github:niri-wm/niri";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        rust-overlay.follows = "";
       };
     };
     nix-indexdb = {
