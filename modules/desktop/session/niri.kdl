@@ -57,6 +57,8 @@ layout {
     }
 }
 
+prefer-no-csd
+
 screenshot-path "~/Pictures/Screenshots/Screenshots_%Y-%m-%d_%H-%M-%S.png"
 
 window-rule {
