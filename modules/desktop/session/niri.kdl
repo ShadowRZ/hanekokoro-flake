@@ -131,6 +131,7 @@ window-rule {
 window-rule {
     match app-id="rmmv-game"
     match app-id="rmmz-game"
+    match app-id="mpv"
 
     geometry-corner-radius 0
     clip-to-geometry true
