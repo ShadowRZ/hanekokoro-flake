@@ -34,6 +34,7 @@
         pkgs.xwayland-satellite
         pkgs.nautilus
         pkgs.file-roller
+        pkgs.loupe
       ];
 
       programs = {

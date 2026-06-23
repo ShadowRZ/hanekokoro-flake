@@ -10,12 +10,8 @@
             config.programs.mpv.package
             config.programs.neovide.package
             pkgs.file-roller
+            pkgs.loupe
           ];
-          associations = {
-            added = {
-              "image/*" = "firefox.desktop";
-            };
-          };
           defaultApplications = {
             "image/*" = "firefox.desktop";
             "text/html" = "firefox.desktop";
