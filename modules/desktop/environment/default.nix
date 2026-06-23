@@ -17,22 +17,18 @@
       users.users.shadowrz = {
         packages = with pkgs; [
           # keep-sorted start
+          abiword
           d-spy # D-Spy
           fractal
           gimp3 # GIMP 3
+          gnumeric
           godot_4
           inkscape # Inkscape
           nix-kotone.blender-bin.blender_5_1 # Blender 5.1.* (Binary)
-          obsidian
-          onlyoffice-desktopeditors # ONLYOFFICE Desktop editors
           pika-backup
-          quodlibet-full
-          ungoogled-chromium
           # keep-sorted end
         ];
       };
-
-      hanekokoro.nixos.allowedUnfreePredicates = [ "obsidian" ];
 
       hanekokoro.nixos.preservation.user.directories = [
         {
@@ -42,21 +38,19 @@
 
         # keep-sorted start
         ".config/GIMP"
+        ".config/abiword"
         ".config/blender"
         ".config/borg"
         ".config/chromium"
         ".config/dconf"
         ".config/godot"
         ".config/inkscape"
-        ".config/obsidian"
-        ".config/onlyoffice"
         ".config/pika-backup"
         ".config/quodlibet"
         ".local/share/applications"
         ".local/share/fonts"
         ".local/share/fractal"
         ".local/share/godot"
-        ".local/share/onlyoffice"
         ".local/share/pki"
         "Desktop"
         "Documents"
