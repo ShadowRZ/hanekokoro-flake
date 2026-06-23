@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.desktop =
-    { pkgs, ... }:
+    { config, pkgs, ... }:
     {
       i18n = {
         # Fcitx 5
@@ -8,9 +8,18 @@
           enable = true;
           type = "fcitx5";
           fcitx5 = {
-            fcitx5-with-addons = pkgs.qt6Packages.fcitx5-with-addons.override {
-              withConfigtool = false;
-            };
+            fcitx5-with-addons =
+              (pkgs.qt6Packages.fcitx5-with-addons.override {
+                withConfigtool = false;
+              }).overrideAttrs
+                {
+                  paths = [
+                    pkgs.fcitx5
+                    pkgs.qt6Packages.fcitx5-qt
+                    pkgs.fcitx5-gtk
+                  ]
+                  ++ config.i18n.inputMethod.fcitx5.addons;
+                };
             waylandFrontend = true;
             addons = with pkgs; [
               kdePackages.fcitx5-chinese-addons

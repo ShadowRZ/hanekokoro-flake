@@ -121,7 +121,10 @@
 
       qt = {
         enable = true;
-        platformTheme.name = "qtct";
+        platformTheme = {
+          name = "qtct";
+          package = [ pkgs.qt6Packages.qt6ct ];
+        };
       };
 
       home.file.".config/niri/config.kdl".source = ./niri.kdl;
