@@ -14,7 +14,7 @@ Based on [Dendritic](https://github.com/mightyiam/dendritic) pattern.
 * **Desktop Environment:** [Niri] + [Noctalia Shell]
 * **Terminal:** [Kitty]
 * **Browser:** Firefox + [Parfait]
-* **Shell:** [Fish] + [Starship]
+* **Shell:** [Nushell] + [Starship]
 * **Display Manager:** [SDDM]
 * **Colorscheme:** [Catppuccin]
 * **Media player:** [mpv]
@@ -30,13 +30,13 @@ Based on [Dendritic](https://github.com/mightyiam/dendritic) pattern.
 <!-- References -->
 <!-- keep-sorted start -->
 [Catppuccin]: https://catppuccin.com
-[Fish]: https://fishshell.com
 [Helix]: https://helix-editor.com
 [Kitty]: https://sw.kovidgoyal.net/kitty/
 [Lanzaboote]: https://github.com/nix-community/lanzaboote
 [Neovim]: https://neovim.io
 [Niri]: https://niri-wm.github.io/niri/
 [Noctalia Shell]: https://noctalia.dev
+[Nushell]: https://www.nushell.sh
 [Parfait]: https://github.com/reizumii/parfait
 [SDDM]: https://wiki.archlinux.org/title/SDDM
 [Starship]: https://starship.rs

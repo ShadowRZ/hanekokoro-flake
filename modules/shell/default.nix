@@ -1,14 +1,12 @@
 {
   flake.modules.nixos.shell = _: {
-    programs.fish.enable = true;
-
     hanekokoro.nixos.preservation.user = {
       directories = [
         ".config/carapace"
         ".local/share/zoxide"
       ];
       files = [
-        ".local/share/fish/fish_history"
+        ".config/nushell/history.txt"
       ];
     };
   };
