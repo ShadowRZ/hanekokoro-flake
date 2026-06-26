@@ -10,6 +10,7 @@
             preserveAspectRatio = "true";
             padding = {
               top = 1;
+              left = 1;
             };
           };
           display = {
