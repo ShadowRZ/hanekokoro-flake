@@ -15,17 +15,21 @@
           sarasa-gothic # Sarasa Gothic
           source-han-sans-vf-otf # Source Han Sans Variable
           source-han-serif-vf-otf # Source Han Serif Variable
-          dejavu_fonts # DejaVu
-          cantarell-fonts # Cantarell
+          nerd-fonts.symbols-only
           (google-fonts.override {
             fonts = [
               "Space Grotesk"
               "Outfit"
             ];
           })
-          nerd-fonts.symbols-only
           (iosevka-bin.override {
             variant = "Aile";
+          })
+          (ibm-plex.override {
+            families = [
+              "sans-variable"
+              "serif-variable"
+            ];
           })
           # Iosevka Builds
           hanekokoro-sans
@@ -39,18 +43,19 @@
             # https://bugreports.qt.io/browse/QTBUG-80434
             # So put emoji font here.
             sansSerif = [
-              "DejaVu Sans"
-              "Source Han Sans SC VF"
+              "IBM Plex Sans Var"
+              "思源黑体 VF"
               "Noto Color Emoji"
             ];
             serif = [
-              "DejaVu Serif"
-              "Source Han Serif SC VF"
+              "IBM Plex Serif Var"
+              "思源宋体 VF"
               "Noto Color Emoji"
             ];
             monospace = [
               "Hanekokoro Mono-E"
               "Sarasa Mono SC"
+              "Noto Color Emoji"
             ];
             emoji = [ "Noto Color Emoji" ];
           };
