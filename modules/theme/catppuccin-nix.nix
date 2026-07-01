@@ -22,14 +22,13 @@
           };
 
         # keep-sorted start block=yes
-        cursors = {
-          enable = true;
-          flavor = "latte";
-        };
         plymouth = {
           enable = false;
         };
         sddm = {
+          enable = false;
+        };
+        tty = {
           enable = false;
         };
         # keep-sorted end
@@ -60,10 +59,6 @@
           };
 
         # keep-sorted start block=yes
-        cursors = {
-          enable = true;
-          flavor = "latte";
-        };
         firefox = {
           enable = false;
         };

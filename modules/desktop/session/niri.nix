@@ -18,6 +18,10 @@
             enable = true;
             enableHidpi = true;
             settings = {
+              Theme = {
+                CursorTheme = "Bibata-Modern-Ice";
+                CursorSize = 32;
+              };
               General = {
                 GreeterEnvironment = lib.mkForce "QML2_IMPORT_PATH=${config.programs.silentSDDM.package'}/share/sddm/themes/silent/components/,QT_SCREEN_SCALE_FACTORS=2,QT_FONT_DPI=192,QT_IM_MODULE=qtvirtualkeyboard";
               };
