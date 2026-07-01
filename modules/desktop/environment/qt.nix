@@ -31,7 +31,7 @@
           kvantum = {
             enable = true;
             settings = {
-              General.theme = config.home.pointerCursor.name;
+              General.theme = "catppuccin-latte-rosewater";
             };
           };
         }

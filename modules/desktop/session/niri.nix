@@ -34,6 +34,7 @@
       };
 
       environment.systemPackages = [
+        pkgs.bibata-cursors
         pkgs.dconf-editor
         pkgs.xwayland-satellite
         pkgs.nautilus

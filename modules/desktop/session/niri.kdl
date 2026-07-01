@@ -4,7 +4,7 @@ environment {
 }
 
 cursor {
-    xcursor-theme "catppuccin-latte-rosewater-cursors"
+    xcursor-theme "Bibata-Modern-Ice"
     xcursor-size 36
 }
 
