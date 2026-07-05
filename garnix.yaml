@@ -1,6 +1,0 @@
-builds:
-  include:
-    - nixosConfigurations.*
-    - devShells.*.*
-    - packages.*.*
-    - apps.*.*
