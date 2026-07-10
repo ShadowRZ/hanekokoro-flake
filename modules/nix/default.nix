@@ -13,6 +13,8 @@
           experimental-features = [
             "auto-allocate-uids"
             "cgroups"
+            "nix-command"
+            "pipe-operators"
           ];
           auto-allocate-uids = true;
           use-cgroups = true;
