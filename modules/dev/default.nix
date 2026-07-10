@@ -4,6 +4,7 @@
     { pkgs, ... }:
     {
       home.packages = [
+        pkgs.devenv
         pkgs.just
         pkgs.just-lsp
         pkgs.just-formatter
