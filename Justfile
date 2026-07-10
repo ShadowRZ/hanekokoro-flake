@@ -5,10 +5,10 @@ format:
   nix --extra-experimental-features 'nix-command flakes' fmt --verbose -L --accept-flake-config
 
 build:
-  nh os build . -- --option always-allow-substitutes true --accept-flake-config
+  nh os build . -- --accept-flake-config
 
 boot:
-  nh os boot . -- --option always-allow-substitutes true --accept-flake-config
+  nh os boot . -- --accept-flake-config
 
 switch:
-  nh os switch . -- --option always-allow-substitutes true --accept-flake-config
+  nh os switch . -- --accept-flake-config
