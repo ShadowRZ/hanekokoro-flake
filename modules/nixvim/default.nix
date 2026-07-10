@@ -4,6 +4,8 @@
   flake.modules.nixvim.default = _: {
     impureRtp = true;
     withRuby = false;
+    # TODO: Remove once Nixvim update its nixpkgs-unstable pin
+    enableMan = false;
 
     # Override Nixpkgs source with nixos-unstable-small
     # Nixvim tests with nixpkgs-unstable branch, which can be behind nixos-unstable-small sometimes
