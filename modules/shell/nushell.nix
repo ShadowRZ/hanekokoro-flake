@@ -14,7 +14,6 @@
           table.mode = "frameless";
         };
         plugins = [
-          pkgs.nushellPlugins.desktop_notifications
           pkgs.nushellPlugins.formats
           pkgs.nushellPlugins.query
           pkgs.nushellPlugins.skim
