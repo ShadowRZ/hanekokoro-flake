@@ -31,7 +31,13 @@
         power-profiles-daemon.enable = true;
         upower.enable = true;
         playerctld.enable = true;
+        # Using oo7 instead of Niri upstream default of gnome-keyring
+        oo7.enable = true;
+        gnome.gnome-keyring.enable = false;
       };
+
+      # Override Secret Portal too
+      xdg.portal.config.niri."org.freedesktop.impl.portal.Secret" = lib.mkForce "oo7-portal";
 
       environment.systemPackages = [
         pkgs.bibata-cursors
