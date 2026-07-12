@@ -329,7 +329,7 @@
         "type": "github"
       }
     },
-    "noctalia-shell": {
+    "noctalia": {
       "inputs": {
         "nixpkgs": []
       },
@@ -337,13 +337,13 @@
         "lastModified": 1783816538,
         "narHash": "sha256-pfkdML2xWvx2Rd3FSmJZMmErSf0blwa2o2t+K22EQCo=",
         "owner": "noctalia-dev",
-        "repo": "noctalia-shell",
+        "repo": "noctalia",
         "rev": "e9d5db98ae9a85e22c28de506b5e31ecd400a30f",
         "type": "github"
       },
       "original": {
         "owner": "noctalia-dev",
-        "repo": "noctalia-shell",
+        "repo": "noctalia",
         "type": "github"
       }
     },
@@ -380,7 +380,7 @@
         "nixos-sensible": "nixos-sensible",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "noctalia-shell": "noctalia-shell",
+        "noctalia": "noctalia",
         "preservation": "preservation",
         "rust-overlay": "rust-overlay",
         "shadowrz": "shadowrz",

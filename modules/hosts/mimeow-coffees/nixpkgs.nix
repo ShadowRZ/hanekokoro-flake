@@ -13,7 +13,7 @@
         inputs.neovim-overlay.overlays.default
         inputs.niri.overlays.default
         inputs.nix-indexdb.overlays.nix-index
-        inputs.noctalia-shell.overlays.default
+        inputs.noctalia.overlays.default
         inputs.shadowrz.overlays.default
         # keep-sorted end
       ];
