@@ -9,6 +9,8 @@
         pkgs.just-lsp
         pkgs.just-formatter
       ];
+
+      services.ssh-agent.enable = true;
     };
 
   flake.modules.nixos.dev = {
