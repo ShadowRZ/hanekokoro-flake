@@ -93,6 +93,10 @@ in
               directories = [ ".cache/nix" ];
             };
           };
+          commonMountOptions = [
+            "x-gvfs-hide"
+            "x-gdu.hide"
+          ];
         };
       };
 
