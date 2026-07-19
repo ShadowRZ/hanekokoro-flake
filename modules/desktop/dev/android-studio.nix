@@ -17,6 +17,7 @@
           ".android"
           ".config/Google"
           ".local/share/Google"
+          ".local/share/JetBrains"
         ];
       };
     };
