@@ -2,6 +2,7 @@
 {
   flake.modules.nixos."security/lanzaboote" =
     {
+      config,
       pkgs,
       lib,
       ...
@@ -27,9 +28,24 @@
       boot.lanzaboote = {
         enable = true;
         pkiBundle = lib.mkDefault "/persist/var/lib/sbctl";
+        configurationLimit = 8;
+        measuredBoot = {
+          enable = true;
+          pcrs = [
+            0
+            4
+            7
+          ];
+        };
       };
 
       # Setup a mount point at /var/lib/sbctl
-      hanekokoro.nixos.preservation.directories = [ "/var/lib/sbctl" ];
+      hanekokoro.nixos.preservation = {
+        directories = [
+          "/var/lib/sbctl"
+          config.boot.lanzaboote.measuredBoot.pcrlockDirectory
+        ];
+        files = [ config.boot.lanzaboote.measuredBoot.pcrlockPolicy ];
+      };
     };
 }
