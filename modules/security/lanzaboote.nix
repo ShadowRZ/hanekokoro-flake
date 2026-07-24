@@ -2,7 +2,6 @@
 {
   flake.modules.nixos."security/lanzaboote" =
     {
-      config,
       pkgs,
       lib,
       ...
@@ -36,6 +35,8 @@
             4
             7
           ];
+          pcrlockDirectory = "/persist/var/lib/pcrlock.d";
+          pcrlockPolicy = "/persist/var/lib/systemd/pcrlock.json";
         };
       };
 
@@ -43,9 +44,7 @@
       hanekokoro.nixos.preservation = {
         directories = [
           "/var/lib/sbctl"
-          config.boot.lanzaboote.measuredBoot.pcrlockDirectory
         ];
-        files = [ config.boot.lanzaboote.measuredBoot.pcrlockPolicy ];
       };
     };
 }
