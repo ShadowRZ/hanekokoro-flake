@@ -8,7 +8,7 @@
           enable = true;
           defaultApplicationPackages = [
             config.programs.mpv.package
-            config.programs.neovide.package
+            config.programs.emacs.package
             pkgs.file-roller
             pkgs.loupe
           ];
