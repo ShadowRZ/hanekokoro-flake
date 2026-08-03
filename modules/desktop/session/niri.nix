@@ -50,7 +50,6 @@
 
       programs = {
         niri.enable = true;
-        niri.package = pkgs.niri.override { libdisplay-info = pkgs.libdisplay-info_0_3; };
         nm-applet.enable = true;
         silentSDDM = {
           enable = true;
