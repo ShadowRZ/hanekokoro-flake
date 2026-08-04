@@ -26,8 +26,10 @@
             osd-border-size = 1;
             osd-border-color = "#C0808080";
 
-            hwdec = "vaapi";
+            hwdec = "vulkan,vaapi,auto";
+            hwdec-codecs = "all";
             vo = "gpu-next";
+            gpu-api = "vulkan";
           };
           scriptOpts = {
             console = {
