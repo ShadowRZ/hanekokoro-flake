@@ -70,6 +70,15 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "";
     };
+    nixos-cli = {
+      url = "github:nix-community/nixos-cli";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+        flake-compat.follows = "";
+        optnix.follows = "";
+      };
+    };
     nixos-sensible = {
       url = "github:Guanran928/nixos-sensible";
     };
