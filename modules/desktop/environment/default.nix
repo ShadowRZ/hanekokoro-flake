@@ -30,6 +30,8 @@
         ];
       };
 
+      programs.gpu-screen-recorder.enable = true;
+
       hanekokoro.nixos.preservation.user.directories = [
         {
           directory = ".ssh";
