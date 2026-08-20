@@ -16,7 +16,6 @@
         plugins = [
           pkgs.nushellPlugins.formats
           pkgs.nushellPlugins.query
-          pkgs.nushellPlugins.skim
         ];
         extraConfig =
           let
@@ -31,6 +30,7 @@
             overlay use ${git-aliases}/git-aliases.nu
           '';
         shellAliases = {
+          # Otherwise it uses a POSIX ls command
           ls = lib.mkForce "run-internal ls";
         };
         environmentVariables = {
