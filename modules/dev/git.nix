@@ -26,6 +26,7 @@
         delta = {
           enable = true;
           enableGitIntegration = true;
+          enableJujutsuIntegration = true;
         };
         ### Gh
         gh = {
@@ -35,10 +36,32 @@
             version = "1";
           };
         };
+        ### Jujutsu
+        jujutsu = {
+          enable = true;
+          settings = {
+            user = {
+              name = "夜坂雅";
+              email = "23130178+ShadowRZ@users.noreply.github.com";
+            };
+            signing = {
+              behavior = "drop";
+              backend = "gpg";
+              key = "AC597AD389D1CC5618AD1ED9B7123A2B6B0AE434";
+            };
+            git = {
+              sign-on-push = true;
+              abandon-unreachable-commits = true;
+            };
+          };
+        };
       };
     };
 
   flake.modules.nixos.dev = {
-    hanekokoro.nixos.preservation.user.files = [ ".config/gh/hosts.yml" ];
+    hanekokoro.nixos.preservation.user = {
+      files = [ ".config/gh/hosts.yml" ];
+      directories = [ ".config/jj/repos" ];
+    };
   };
 }
