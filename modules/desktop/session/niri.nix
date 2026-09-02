@@ -139,6 +139,20 @@
         };
       };
 
+      services.swayidle = {
+        enable = true;
+        events = {
+          "before-sleep" = "loginctl lock-session";
+          "lock" = "loginctl lock-session";
+        };
+        timeouts = [
+          {
+            timeout = 600;
+            command = "noctalia msg session lock-and-suspend";
+          }
+        ];
+      };
+
       home.file.".config/niri/config.kdl".source = ./niri.kdl;
     };
 }
