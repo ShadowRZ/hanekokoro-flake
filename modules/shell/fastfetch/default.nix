@@ -1,8 +1,9 @@
 {
   flake.modules.homeManager = {
-    shell = _: {
+    shell = { pkgs, ... }: {
       programs.fastfetch = {
         enable = true;
+        package = pkgs.fastfetchMinimal;
         settings = {
           logo = {
             type = "kitty";
