@@ -81,11 +81,11 @@
         "nixpkgs-stable": []
       },
       "locked": {
-        "lastModified": 1788355556,
-        "narHash": "sha256-Gsnava5EBu7G74biob6UTwWgZv3tpR3WIeQ0d85frHk=",
+        "lastModified": 1788379572,
+        "narHash": "sha256-OM42YXx1EGfLgYYCHvSQ9OdvLzBCJo3leo5fR0CiPCs=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "ee03d59c12ee13ee9bfb91d656cd26ccd7a74fa0",
+        "rev": "acfb034d72b0532ec048ca30db764dd738601d3a",
         "type": "github"
       },
       "original": {
@@ -359,11 +359,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1788359564,
-        "narHash": "sha256-ZK+w9Q2OGrbL6Ij0dTlz2tEOHZl6LUKi5SvhxglFoD8=",
+        "lastModified": 1788390972,
+        "narHash": "sha256-f0bm/t+YXVbyh2DYOMXvttM6o1/EbeyIFR1ZGZpU77M=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "41f810185c681ce08055bb7a7afe89c21adf2a30",
+        "rev": "dea848d8b1ebea64039652372851401b05029576",
         "type": "github"
       },
       "original": {
