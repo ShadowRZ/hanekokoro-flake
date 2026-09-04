@@ -73,10 +73,10 @@
         };
       };
 
-      services.journald.extraConfig = ''
-        SystemMaxUse=100M
-        MaxFileSec=3day
-      '';
+      services.journald.settings.Journal = {
+        SystemMaxUse = "100M";
+        MaxFileSec = "3day";
+      };
 
       services.nscd.enableNsncd = true;
 
