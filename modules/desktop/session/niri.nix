@@ -91,13 +91,13 @@
       services.swayidle = {
         enable = true;
         events = {
-          "before-sleep" = "loginctl lock-session";
-          "lock" = "loginctl lock-session";
+          "before-sleep" = "${pkgs.noctalia}/bin/noctalia msg session lock";
+          "lock" = "${pkgs.noctalia}/bin/noctalia msg session lock";
         };
         timeouts = [
           {
             timeout = 600;
-            command = "noctalia msg session lock-and-suspend";
+            command = "${pkgs.noctalia}/bin/noctalia msg session lock-and-suspend";
           }
         ];
       };
