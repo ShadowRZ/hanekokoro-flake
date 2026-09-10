@@ -18,6 +18,8 @@
           };
           gtk3.extraConfig = gtkIni;
           gtk4.extraConfig = gtkIni;
+          gtk3.extraCss = builtins.readFile ./gtk.css;
+          gtk4.extraCss = builtins.readFile ./gtk.css;
           theme = {
             name = "adw-gtk3";
           };
