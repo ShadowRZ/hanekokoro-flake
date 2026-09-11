@@ -24,7 +24,7 @@
           gnumeric
           godot_4
           inkscape # Inkscape
-          nix-kotone.blender-bin.blender_5_1 # Blender 5.1.* (Binary)
+          nix-kotone.blender-bin.blender_5_2 # Blender 5.2.* (Binary)
           pika-backup
           # keep-sorted end
         ];
