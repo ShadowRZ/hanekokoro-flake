@@ -44,6 +44,18 @@
               name = "夜坂雅";
               email = "23130178+ShadowRZ@users.noreply.github.com";
             };
+            aliases = {
+              mine = [
+                "log"
+                "-r"
+                "mine()"
+              ];
+              roots = [
+                "log"
+                "-r"
+                "roots(mine())"
+              ];
+            };
             signing = {
               behavior = "drop";
               backend = "gpg";
@@ -52,6 +64,36 @@
             git = {
               sign-on-push = true;
               abandon-unreachable-commits = true;
+            };
+            ui = {
+              conflict-marker-style = "git";
+              default-command = "log";
+            };
+            templates = {
+              draft_commit_description = ''
+                concat(
+                  builtin_draft_commit_description,
+                  "\nJJ: ignore-rest\n",
+                  "JJ: ------------------------ >8 ------------------------\n",
+                  "JJ: Do not modify or remove the line above.\n",
+                  "JJ: Everything below it will be ignored.\n\n",
+                  diff.git(),
+                )
+              '';
+              git_push_bookmark = "\"shadowrz/push-\" ++ change_id.short()";
+            };
+            revsets = {
+              bookmark-advance-to = "closest_pushable(@)";
+            };
+            revset-aliases = {
+              "closest_pishable(to)" = ''
+                heads(
+                    ::to
+                    & mutable()
+                    & description(regex:"\\S")
+                    & (~empty() | merges())
+                )
+              '';
             };
           };
         };
