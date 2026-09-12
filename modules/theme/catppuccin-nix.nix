@@ -72,6 +72,9 @@
         obs = {
           flavor = "latte";
         };
+        starship = {
+          enable = false; # Configuration vendered to the TOML file
+        };
         # keep-sorted end
       };
     };
