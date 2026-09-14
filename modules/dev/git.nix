@@ -86,7 +86,7 @@
               bookmark-advance-to = "closest_pushable(@)";
             };
             revset-aliases = {
-              "closest_pishable(to)" = ''
+              "closest_pushable(to)" = ''
                 heads(
                     ::to
                     & mutable()
