@@ -111,6 +111,14 @@ format = "[$path]($style)[$read_only]($read_only_style)"
 repo_root_style = "bold flamingo"
 repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)"
 
+[cmd_duration]
+format = "[◄ $duration ](bold subtext0)"
+
+[jobs]
+format = "[$symbol $number]($style) "
+style = "bold subtext1"
+symbol = "[▶](bold subtext1)"
+
 # Use VCS Module instead of induvidal modules
 
 [vcs]
