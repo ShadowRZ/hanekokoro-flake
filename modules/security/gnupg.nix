@@ -16,6 +16,9 @@
   };
 
   flake.modules.homeManager."security/gnupg" = { pkgs, ... }: {
-    home.packages = [ pkgs.sequoia-sq ];
+    home.packages = [
+      pkgs.openpgp-card-tools
+      pkgs.sequoia-sq
+    ];
   };
 }
