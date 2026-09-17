@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.dev =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     {
       programs = {
         git = {
@@ -8,6 +8,8 @@
           package = pkgs.gitMinimal;
           signing = {
             signByDefault = true;
+            format = "openpgp";
+            signer = lib.getExe pkgs.sequoia-chameleon-gnupg;
             key = "AC597AD389D1CC5618AD1ED9B7123A2B6B0AE434";
           };
           settings = {
@@ -60,6 +62,7 @@
               behavior = "drop";
               backend = "gpg";
               key = "AC597AD389D1CC5618AD1ED9B7123A2B6B0AE434";
+              backends.gpg.program = lib.getExe pkgs.sequoia-chameleon-gnupg;
             };
             git = {
               sign-on-push = true;
@@ -73,10 +76,10 @@
               draft_commit_description = ''
                 concat(
                   builtin_draft_commit_description,
-                  "\nJJ: ignore-rest\n",
+                  "JJ: ignore-rest\n",
                   "JJ: ------------------------ >8 ------------------------\n",
                   "JJ: Do not modify or remove the line above.\n",
-                  "JJ: Everything below it will be ignored.\n\n",
+                  "JJ: Everything below it will be ignored.\n",
                   diff.git(),
                 )
               '';
