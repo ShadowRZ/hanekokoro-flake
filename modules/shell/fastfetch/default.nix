@@ -3,7 +3,7 @@
     shell = { pkgs, ... }: {
       programs.fastfetch = {
         enable = true;
-        package = pkgs.fastfetchMinimal;
+        package = pkgs.fastfetch-unwrapped;
         settings = {
           logo = {
             type = "kitty";
