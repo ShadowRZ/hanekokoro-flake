@@ -9,7 +9,7 @@
           signing = {
             signByDefault = true;
             format = "openpgp";
-            signer = lib.getExe pkgs.sequoia-chameleon-gnupg;
+            signer = lib.getExe pkgs.oct-git;
             key = "AC597AD389D1CC5618AD1ED9B7123A2B6B0AE434";
           };
           settings = {
@@ -62,7 +62,7 @@
               behavior = "drop";
               backend = "gpg";
               key = "AC597AD389D1CC5618AD1ED9B7123A2B6B0AE434";
-              backends.gpg.program = lib.getExe pkgs.sequoia-chameleon-gnupg;
+              backends.gpg.program = lib.getExe pkgs.oct-git;
             };
             git = {
               sign-on-push = true;

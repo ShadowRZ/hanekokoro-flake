@@ -420,11 +420,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1775624388,
-        "narHash": "sha256-US9vI5/BCBeidzix/ZDmnagHo4CSPcCoN/xIM7w6zLQ=",
+        "lastModified": 1789648446,
+        "narHash": "sha256-oMklUBFRHXvM7/Y9KmgMQPT8KjpBlit3luCcwrBadyg=",
         "owner": "ShadowRZ",
         "repo": "nur-packages",
-        "rev": "36f56ae867b931dd59f881c71dc46f96db19ec85",
+        "rev": "d678415c1227973f6fb1904144fae5235359d38b",
         "type": "github"
       },
       "original": {
