@@ -30,8 +30,9 @@
             overlay use ${git-aliases}/git-aliases.nu
           '';
         shellAliases = {
-          # Otherwise it uses a POSIX ls command
-          ls = lib.mkForce "run-internal ls";
+          ls = lib.mkForce "ls";
+          l = lib.mkForce "ls";
+          du = lib.mkForce "du";
         };
         environmentVariables = {
           GPG_TTY = lib.hm.nushell.mkNushellInline "(tty)";
