@@ -4,7 +4,6 @@
     {
       programs.nushell = {
         enable = true;
-        configFile.source = ./config.nu;
         settings = {
           show_banner = false;
           completions.external = {
@@ -32,6 +31,8 @@
           in
           ''
             overlay use ${git-aliases}/git-aliases.nu
+
+            source ${./config.nu}
           '';
         shellAliases = {
           ls = lib.mkForce "ls";
