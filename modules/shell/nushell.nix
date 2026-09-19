@@ -12,6 +12,10 @@
             max_results = 200;
           };
           table.mode = "frameless";
+          history = {
+            file_format = "sqlite";
+            isolation = true;
+          };
         };
         plugins = [
           pkgs.nushellPlugins.formats
