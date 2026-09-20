@@ -1,6 +1,17 @@
 {
+  flake.modules.nixos.shell = _: {
+    hanekokoro.nixos.preservation.user.directories = [
+      ".local/share/nushell"
+    ];
+  };
+
   flake.modules.homeManager.shell =
-    { pkgs, lib, ... }:
+    {
+      config,
+      pkgs,
+      lib,
+      ...
+    }:
     {
       programs.nushell = {
         enable = true;
@@ -13,6 +24,7 @@
           table.mode = "frameless";
           history = {
             file_format = "sqlite";
+            path = "${config.xdg.dataHome}/nushell/";
           };
         };
         plugins = [
