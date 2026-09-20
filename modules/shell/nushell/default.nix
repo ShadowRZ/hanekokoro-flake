@@ -13,7 +13,6 @@
           table.mode = "frameless";
           history = {
             file_format = "sqlite";
-            isolation = true;
           };
         };
         plugins = [
