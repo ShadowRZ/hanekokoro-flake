@@ -27,7 +27,7 @@
       boot.lanzaboote = {
         enable = true;
         pkiBundle = lib.mkDefault "/persist/var/lib/sbctl";
-        configurationLimit = 8;
+        configurationLimit = 4;
         measuredBoot = {
           enable = true;
           pcrs = [
