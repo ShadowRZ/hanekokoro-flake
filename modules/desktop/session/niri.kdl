@@ -67,25 +67,32 @@ window-rule {
 }
 
 window-rule {
-    match app-id="dev.noctalia.Noctalia.Settings"
+    match app-id="dev.noctalia.Noctalia"
     open-floating true
     default-column-width { fixed 1080; }
     default-window-height { fixed 920; }
 }
 
-// [Nocatalia Shell] Set the overview wallpaper on the backdrop.
+// [Noctalia Shell] Set the overview wallpaper on the backdrop.
 layer-rule {
     match namespace="^noctalia-backdrop"
     place-within-backdrop true
 }
 
-// [Nocatalia Shell] Drop blur on bars
+// [Noctalia Shell] Drop blur on bars
 layer-rule {
-    match namespace="^noctalia-(bar-main|notification|dock|panel)$"
+    match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
 
     background-effect {
         xray false
-        blur false
+    }
+}
+
+layer-rule {
+    match namespace="noctalia-window-switcher"
+    background-effect {
+        blur true
+        xray false
     }
 }
 
@@ -101,6 +108,7 @@ window-rule {
 
     background-effect {
         blur true
+        xray false
     }
 }
 
