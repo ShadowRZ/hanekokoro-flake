@@ -52,7 +52,6 @@
 
       programs = {
         niri.enable = true;
-        nm-applet.enable = true;
       };
 
       nix.settings = {
