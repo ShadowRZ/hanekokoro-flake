@@ -1,12 +1,22 @@
 {
   flake.modules.nixos.desktop =
-    { pkgs, ... }:
+    _:
     {
       programs.kdeconnect = {
         enable = true;
-        package = pkgs.valent;
+        package = null;
       };
 
-      hanekokoro.nixos.preservation.user.directories = [ ".config/valent" ];
+      hanekokoro.nixos.preservation.user.directories = [ ".config/kdeconnect" ];
+    };
+
+  flake.modules.homeManager.desktop =
+    { pkgs, ... }:
+    {
+      services.kdeconnect = {
+        enable = true;
+        package = pkgs.kdePackages.kdeconnect-kde;
+        indicator = true;
+      };
     };
 }
