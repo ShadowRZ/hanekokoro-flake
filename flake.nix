@@ -104,10 +104,6 @@
       url = "github:ShadowRZ/nur-packages";
       inputs.nixpkgs.follows = "";
     };
-    silent-sddm = {
-      url = "github:uiriansan/SilentSDDM";
-      inputs.nixpkgs.follows = "";
-    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "";
