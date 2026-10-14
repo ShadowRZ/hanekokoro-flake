@@ -19,8 +19,8 @@
           auto-allocate-uids = true;
           use-cgroups = true;
           use-xdg-base-directories = true;
-          http-connections = 0;
-          max-substitution-jobs = 128;
+          http-connections = 4;
+          max-substitution-jobs = 16;
         };
 
         registry = {
