@@ -5,10 +5,10 @@ format:
   nix --extra-experimental-features 'nix-command flakes' fmt --verbose -L --accept-flake-config
 
 build:
-  nh os build . -- --accept-flake-config
+  nixos-rebuild build --flake --no-link --keep-going --accept-flake-config --log-format internal-json |& nom --json
 
 boot:
-  nh os boot . -- --accept-flake-config
+  nixos-rebuild boot --flake --keep-going --accept-flake-config --log-format internal-json |& nom --json
 
 switch:
-  nh os switch . -- --accept-flake-config
+  nixos-rebuild switch --flake --keep-going --accept-flake-config --log-format internal-json |& nom --json
