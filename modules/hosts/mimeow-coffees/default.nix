@@ -7,7 +7,24 @@
 
       hanekokoro.nixos.user = "shadowrz";
 
-      boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
+      boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest.extend (
+        final: prev: {
+          ## TODO: https://github.com/NixOS/nixpkgs/pull/575468
+          lenovo-legion-module = prev.lenovo-legion-module.overrideAttrs (old: {
+            makeFlags = old.makeFlags ++ [
+              "INSTALL_MOD_PATH=${placeholder "out"}"
+              "DEPMOD=true"
+            ];
+            installTargets = [ "modules_install" ];
+            installFlags = [
+              "-C"
+              "${prev.kernel.dev}/lib/modules/${prev.kernel.modDirVersion}/build"
+              "M=$(PWD)"
+            ];
+            installPhase = "";
+          });
+        }
+      );
 
       time.timeZone = "Asia/Shanghai";
 
