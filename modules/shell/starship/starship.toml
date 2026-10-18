@@ -2,6 +2,8 @@ add_newline = false
 palette = "catppuccin_mocha"
 continuation_prompt = "[..](dimmed white)"
 
+command_timeout = 2000
+
 format = """
 $hostname\
 $directory\
@@ -123,7 +125,27 @@ symbol = "[▶](bold subtext1)"
 
 [vcs]
 disabled = false
-order = ["git", "hg", "pijul", "fossil"]
+order = ["jj", "git", "hg", "pijul", "fossil"]
+
+## VCS: Jujutsu
+
+[jj_bookmark]
+format = " [($symbol $bookmark(@$remote)$diverged( \\(+$overflow_count others\\)))]($style)"
+symbol = "[](bold peach)"
+style = "bold teal"
+truncation_symbol = ""
+ignore_names = ["master", "main"]
+
+[jj_change]
+format = " [@ = ](bold peach)[($change / $commit)]($style)"
+prefix_style = "bold blue"
+suffix_style = "surface2"
+
+[jj_status]
+format = "( [$all_status](bold maroon) [$ahead_behind]($style))"
+style = "bold mauve"
+renamed = "r"
+deleted = "x"
 
 ## VCS: Git
 
