@@ -22,7 +22,6 @@
           fractal
           gimp3 # GIMP 3
           gnumeric
-          godot_4
           inkscape # Inkscape
           nix-kotone.blender-bin.blender_5_2 # Blender 5.2.* (Binary)
           pika-backup
