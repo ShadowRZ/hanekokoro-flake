@@ -272,6 +272,9 @@ format = "( [$symbol($version)]($style))"
 [golang]
 format = "( [$symbol($version)]($style))"
 
+[gradle]
+format = "( [$symbol($version)]($style))"
+
 [haskell]
 format = "( [$symbol($version)]($style))"
 
