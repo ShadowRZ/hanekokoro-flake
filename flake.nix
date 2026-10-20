@@ -40,9 +40,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
     };
-    import-tree = {
-      url = "github:vic/import-tree";
-    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
       inputs = {
@@ -138,5 +135,11 @@
     ];
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+  outputs =
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
+      { lib, ... }: {
+        imports = ./modules |> lib.fileset.fileFilter (f: f.hasExt "nix") |> lib.fileset.toList;
+      }
+    );
 }
