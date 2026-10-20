@@ -5,7 +5,6 @@
       hostPlatform = "x86_64-linux";
 
       overlays = [
-        inputs.self.overlays.default
         # keep-sorted start
         inputs.blender-bin.overlays.scoped
         inputs.emacs-overlay.overlays.default
