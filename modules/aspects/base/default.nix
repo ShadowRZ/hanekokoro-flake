@@ -1,13 +1,8 @@
-{ inputs, ... }:
 {
   flake.modules.nixos = {
     base =
       { lib, ... }:
       {
-        imports = [
-          inputs.nixos-sensible.nixosModules.default
-        ];
-
         environment.defaultPackages = [ ];
 
         programs = {

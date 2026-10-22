@@ -76,9 +76,6 @@
         optnix.follows = "";
       };
     };
-    nixos-sensible = {
-      url = "github:Guanran928/nixos-sensible";
-    };
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs = {
