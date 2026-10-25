@@ -16,6 +16,7 @@
             "nix-command"
             "pipe-operators"
           ];
+          trusted-users = [ "@wheel" ];
           auto-allocate-uids = true;
           use-cgroups = true;
           use-xdg-base-directories = true;
