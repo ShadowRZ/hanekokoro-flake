@@ -1,4 +1,3 @@
-{ inputs, ... }:
 {
   flake.modules.nixos."desktop/plasma6" =
     {
@@ -44,8 +43,6 @@
           })
           kdePackages.kcalc
           kdePackages.kcharselect
-          # Darkly
-          inputs.darkly.packages.${stdenv.hostPlatform.system}.darkly-qt6
         ];
         plasma6.excludePackages = with pkgs; [
           kdePackages.discover
