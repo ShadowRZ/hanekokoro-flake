@@ -21,7 +21,7 @@
 
       hanekokoro.nixos.user = "shadowrz";
 
-      boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest.extend (
+      boot.kernelPackages = pkgs.linuxPackages_latest.extend (
         final: prev: {
           ## TODO: https://github.com/NixOS/nixpkgs/pull/575468
           lenovo-legion-module = prev.lenovo-legion-module.overrideAttrs (old: {
