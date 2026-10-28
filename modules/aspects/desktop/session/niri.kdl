@@ -8,7 +8,7 @@ cursor {
     xcursor-size 36
 }
 
-spawn-at-startup "noctalia"
+spawn-at-startup "/usr/bin/env" "INTEL_DEBUG=reemit" "noctalia"
 
 hotkey-overlay {
     skip-at-startup
