@@ -1,6 +1,7 @@
 { inputs, ... }:
-let
-  preservationModule =
+
+{
+  flake.aspects.base.nixos =
     { lib, ... }:
     let
       inherit (lib) types mkOption;
@@ -54,61 +55,60 @@ let
         '';
       };
     };
-in
-{
-  flake.modules.nixos.preservation =
-    { config, ... }:
-    let
-      cfg = config.hanekokoro.nixos.preservation;
-      inherit (config.hanekokoro.nixos) user;
-    in
-    {
-      imports = [
-        preservationModule
-        inputs.preservation.nixosModules.preservation
-      ];
 
-      fileSystems.${cfg.location}.neededForBoot = true;
+  flake.aspects.preservation = user: {
+    nixos =
+      { config, ... }:
+      let
+        cfg = config.hanekokoro.nixos.preservation;
+      in
+      {
+        imports = [
+          inputs.preservation.nixosModules.preservation
+        ];
 
-      preservation = {
-        enable = true;
-        preserveAt.${cfg.location} = {
-          inherit (cfg) directories;
-          files = [
-            {
-              file = "/etc/machine-id";
-              inInitrd = true;
-              how = "symlink";
-              configureParent = true;
-            }
-          ]
-          ++ cfg.files;
-          users = {
-            ${user} = {
-              inherit (cfg.user) directories;
-              inherit (cfg.user) files;
+        fileSystems.${cfg.location}.neededForBoot = true;
+
+        preservation = {
+          enable = true;
+          preserveAt.${cfg.location} = {
+            inherit (cfg) directories;
+            files = [
+              {
+                file = "/etc/machine-id";
+                inInitrd = true;
+                how = "symlink";
+                configureParent = true;
+              }
+            ]
+            ++ cfg.files;
+            users = {
+              ${user} = {
+                inherit (cfg.user) directories;
+                inherit (cfg.user) files;
+              };
+              root = {
+                home = "/root";
+                directories = [ ".cache/nix" ];
+              };
             };
-            root = {
-              home = "/root";
-              directories = [ ".cache/nix" ];
-            };
+            commonMountOptions = [
+              "x-gvfs-hide"
+              "x-gdu.hide"
+            ];
           };
-          commonMountOptions = [
-            "x-gvfs-hide"
-            "x-gdu.hide"
+        };
+
+        systemd.services.systemd-machine-id-commit = {
+          unitConfig.ConditionPathIsMountPoint = [
+            ""
+            "/persist/etc/machine-id"
+          ];
+          serviceConfig.ExecStart = [
+            ""
+            "systemd-machine-id-setup --commit --root /persist"
           ];
         };
       };
-
-      systemd.services.systemd-machine-id-commit = {
-        unitConfig.ConditionPathIsMountPoint = [
-          ""
-          "/persist/etc/machine-id"
-        ];
-        serviceConfig.ExecStart = [
-          ""
-          "systemd-machine-id-setup --commit --root /persist"
-        ];
-      };
-    };
+  };
 }

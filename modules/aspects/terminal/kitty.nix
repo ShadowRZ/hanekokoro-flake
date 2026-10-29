@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager."terminal/kitty" = {
+  flake.aspects.terminal._.kitty.homeManager = {
     programs.kitty = {
       enable = true;
       enableGitIntegration = true;

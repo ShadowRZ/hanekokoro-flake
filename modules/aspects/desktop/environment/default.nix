@@ -1,9 +1,7 @@
 {
-  flake.modules.nixos.desktop =
+  flake.aspects.desktop._.environment.nixos =
     { pkgs, ... }:
     {
-      hardware.graphics.enable = true;
-
       environment = {
         systemPackages = with pkgs; [
           adw-gtk3
@@ -66,7 +64,7 @@
       ];
     };
 
-  flake.modules.homeManager.desktop =
+  flake.aspects.desktop._.environment.homeManager =
     { pkgs, ... }:
     {
       systemd.user.sessionVariables.QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";

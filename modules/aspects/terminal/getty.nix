@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.base =
+  flake.aspects.base.nixos =
     { config, ... }:
     {
       services.getty.greetingLine = with config.system.nixos; ''

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."desktop/steam" =
+  flake.aspects.desktop._.environment._.steam.nixos =
     { config, pkgs, ... }:
     {
       programs.steam = {

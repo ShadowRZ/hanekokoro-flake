@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop =
+  flake.aspects.desktop._.environment.homeManager =
     {
       pkgs,
       ...
@@ -16,7 +16,7 @@
       };
     };
 
-  flake.modules.nixos.desktop = {
+  flake.aspects.desktop._.environment.nixos = {
     hanekokoro.nixos.preservation.user.directories = [ ".thunderbird/default" ];
   };
 }

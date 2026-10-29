@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.network = {
+  flake.aspects.network.nixos = {
     networking = {
       # Disable global DHCP
       useDHCP = false;

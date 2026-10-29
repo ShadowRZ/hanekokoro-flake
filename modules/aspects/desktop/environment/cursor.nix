@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop = { pkgs, ... }: {
+  flake.aspects.desktop.homeManager = { pkgs, ... }: {
     home.pointerCursor = {
       enable = true;
       package = pkgs.bibata-cursors;

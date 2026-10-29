@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."hardware/gpu/intel" =
+  flake.aspects.hardware._.gpu._.intel.nixos =
     { pkgs, ... }:
     {
       hardware = {

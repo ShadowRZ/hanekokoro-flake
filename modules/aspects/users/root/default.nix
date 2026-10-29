@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."users/root" =
+  flake.aspects.users._.root.nixos =
     { pkgs, ... }:
     {
       users.users.root = {

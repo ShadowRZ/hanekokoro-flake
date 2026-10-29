@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."desktop/dev/android" =
+  flake.aspects.desktop._.environment._.android.nixos =
     { pkgs, ... }:
     {
       users.users.shadowrz.packages = [

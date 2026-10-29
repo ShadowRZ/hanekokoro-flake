@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."security/pam-fido2" = _: {
+  flake.aspects.security._.pam-fido2.nixos = _: {
     security.pam = {
       services = {
         login.u2fAuth = true;

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.nix = _: {
+  flake.aspects.nix.nixos = _: {
     nix = {
       settings = {
         extra-substituters = [

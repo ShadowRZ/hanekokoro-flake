@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager."desktop/dev" =
+  flake.aspects.desktop._.environment.homeManager =
     { pkgs, ... }:
     {
       programs.zed-editor = {
@@ -15,7 +15,7 @@
       };
     };
 
-  flake.modules.nixos.desktop = {
+  flake.aspects.desktop._.environment.nixos = {
     hanekokoro.nixos.preservation.user.directories = [
       ".config/zed"
       ".local/share/zed"

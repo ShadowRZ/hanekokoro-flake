@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.base =
+  flake.aspects.theming._.catppuccin.nixos =
     { pkgs, ... }:
     {
       imports = [ inputs.catppuccin-nix.nixosModules.default ];
@@ -35,7 +35,7 @@
       };
     };
 
-  flake.modules.homeManager.base =
+  flake.aspects.theming._.catppuccin.homeManager =
     { pkgs, ... }:
     {
       imports = [

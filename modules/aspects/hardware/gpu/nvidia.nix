@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."hardware/gpu/nvidia" =
+  flake.aspects.hardware._.gpu._.nvidia.nixos =
     { config, ... }:
     {
       hardware = {

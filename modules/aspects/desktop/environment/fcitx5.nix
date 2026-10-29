@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop =
+  flake.aspects.desktop.homeManager =
     { config, pkgs, ... }:
     {
       i18n = {
@@ -88,7 +88,7 @@
       };
     };
 
-  flake.modules.nixos.desktop = {
+  flake.aspects.desktop.nixos = {
     hanekokoro.nixos = {
       allowedUnfreePredicates = [ "fcitx5-pinyin-moegirl" ];
       preservation.user.directories = [

@@ -1,14 +1,12 @@
 {
-  flake.modules.nixos = {
-    base =
-      { lib, ... }:
-      {
-        boot = {
-          loader.timeout = 0;
+  flake.aspects.base.nixos =
+    { lib, ... }:
+    {
+      boot = {
+        loader.timeout = lib.mkDefault 0;
 
-          tmp.useTmpfs = true;
-          enableContainers = lib.mkDefault false;
-        };
+        tmp.useTmpfs = lib.mkDefault true;
+        enableContainers = lib.mkDefault false;
       };
-  };
+    };
 }

@@ -1,11 +1,11 @@
 {
-  flake.modules.nixos.shell =
+  flake.aspects.shell.nixos =
     { pkgs, ... }:
     {
       environment.systemPackages = [ pkgs.comma-with-db ];
     };
 
-  flake.modules.homeManager.shell =
+  flake.aspects.shell.homeManager =
     { pkgs, ... }:
     {
       programs = {

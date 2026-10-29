@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."terminal/kmscon" = _: {
+  flake.aspects.terminal._.kmscon.nixos = _: {
     services.kmscon = {
       enable = true;
       useXkbConfig = true;

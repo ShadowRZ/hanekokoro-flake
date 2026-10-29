@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."virt/libvirt" =
+  flake.aspects.virtualisation._.libvirt.nixos =
     { config, pkgs, ... }:
     {
       virtualisation = {
@@ -20,7 +20,7 @@
 
       networking.firewall.trustedInterfaces = [ "virbr*" ];
 
-      users.users.${config.hanekokoro.nixos.user}.extraGroups = [
+      users.users.shadowrz.extraGroups = [
         "kvm"
         "libvirtd"
       ];

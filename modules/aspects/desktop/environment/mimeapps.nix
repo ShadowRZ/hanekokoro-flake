@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop =
+  flake.aspects.desktop.homeManager =
     { config, pkgs, ... }:
     {
       xdg = {

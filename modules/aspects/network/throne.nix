@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."network/throne" = _: {
+  flake.aspects.network._.throne.nixos = _: {
     programs.throne = {
       enable = true;
       tunMode.enable = true;

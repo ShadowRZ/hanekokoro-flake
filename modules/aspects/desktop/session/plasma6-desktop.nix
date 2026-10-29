@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."desktop/plasma6" =
+  flake.aspects.desktop._.environment._.plasma-desktop.nixos =
     {
       config,
       pkgs,

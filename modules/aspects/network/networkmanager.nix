@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."network/networkmanager" = _: {
+  flake.aspects.network._.networkmanager.nixos = _: {
     networking.networkmanager = {
       enable = true;
       dns = "systemd-resolved";

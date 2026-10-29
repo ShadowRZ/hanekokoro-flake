@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.nix = _: {
+  flake.aspects.nix.nixos = _: {
     # Enable Flakes
     nix.settings = {
       experimental-features = [

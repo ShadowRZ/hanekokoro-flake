@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."virt/waydroid" =
+  flake.aspects.virtualisation._.waydroid.nixos =
     { pkgs, ... }:
     {
       virtualisation.waydroid = {

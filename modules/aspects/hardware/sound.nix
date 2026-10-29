@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."hardware/sound" = { pkgs, ... }: {
+  flake.aspects.hardware._.sound.nixos = { pkgs, ... }: {
     services = {
       pulseaudio.enable = false;
       # Pipewire

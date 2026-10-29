@@ -19,7 +19,7 @@
       };
     };
 
-    modules.nixos."users/shadowrz" =
+    aspects.users._.shadowrz.nixos =
       { pkgs, ... }:
       {
         imports = [

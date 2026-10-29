@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop =
+  flake.aspects.desktop._.environment.homeManager =
     {
       config,
       pkgs,
@@ -140,7 +140,7 @@
       };
     };
 
-  flake.modules.nixos.desktop = {
+  flake.aspects.desktop._.environment.nixos = {
     hanekokoro.nixos.allowedUnfreePredicates = [ "wappalyzer" ];
 
     hanekokoro.nixos.preservation.user.directories = [ ".config/mozilla/firefox/default" ];

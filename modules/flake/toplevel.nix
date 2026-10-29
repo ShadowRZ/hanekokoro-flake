@@ -1,7 +1,10 @@
 { inputs, ... }:
 {
   # Add Flake Parts flake module for modules feature.
-  imports = [ inputs.flake-parts.flakeModules.modules ];
+  imports = [
+    inputs.flake-parts.flakeModules.modules
+    inputs.flake-aspects.flakeModule
+  ];
 
   # Enable debugging functionalities.
   # Required for nixd auto completions.

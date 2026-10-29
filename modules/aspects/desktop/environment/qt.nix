@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager."desktop/niri" =
+  flake.aspects.desktop._.environment._.niri.homeManager =
     {
       config,
       lib,

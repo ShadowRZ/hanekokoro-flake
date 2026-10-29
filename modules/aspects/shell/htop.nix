@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.shell = _: {
+  flake.aspects.shell.homeManager = _: {
     programs.htop = {
       enable = true;
       settings = {

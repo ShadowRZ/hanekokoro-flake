@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos."hosts/mimeow-coffees" = _: {
+  flake.aspects.machines._.mimeow-coffees.nixos = _: {
     nixpkgs = {
       hostPlatform = "x86_64-linux";
 

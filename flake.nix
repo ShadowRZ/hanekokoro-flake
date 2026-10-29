@@ -9,6 +9,9 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
+    flake-aspects = {
+      url = "github:denful/flake-aspects";
+    };
     # keep-sorted start block=yes
     blender-bin = {
       url = "github:ShadowRZ/nix-kotone?dir=blender-bin";

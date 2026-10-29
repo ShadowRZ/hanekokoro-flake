@@ -1,105 +1,106 @@
 {
-  flake.modules.nixos."desktop/niri" =
-    {
-      pkgs,
-      lib,
-      ...
-    }:
-    {
-      services = {
-        displayManager = {
-          # SDDM
-          noctalia-greeter = {
-            cursorTheme = {
-              name = "Bibata-Modern-Ice";
-              package = pkgs.bibata-cursors;
-            };
-            enable = true;
-            settings = {
-              cursor = {
-                size = 32;
+  flake.aspects.desktop._.environment._.niri = {
+    nixos =
+      {
+        pkgs,
+        lib,
+        ...
+      }:
+      {
+        services = {
+          displayManager = {
+            # SDDM
+            noctalia-greeter = {
+              cursorTheme = {
                 name = "Bibata-Modern-Ice";
+                package = pkgs.bibata-cursors;
               };
-              keyboard = {
-                layout = "us";
-              };
-              appearance = {
-                font_family = "Space Grotesk";
-                hide_logo = true;
+              enable = true;
+              settings = {
+                cursor = {
+                  size = 32;
+                  name = "Bibata-Modern-Ice";
+                };
+                keyboard = {
+                  layout = "us";
+                };
+                appearance = {
+                  font_family = "Space Grotesk";
+                  hide_logo = true;
+                };
               };
             };
           };
+          power-profiles-daemon.enable = true;
+          upower.enable = true;
+          # Using oo7 instead of Niri upstream default of gnome-keyring
+          oo7.enable = true;
+          gnome.gnome-keyring.enable = false;
         };
-        power-profiles-daemon.enable = true;
-        upower.enable = true;
-        # Using oo7 instead of Niri upstream default of gnome-keyring
-        oo7.enable = true;
-        gnome.gnome-keyring.enable = false;
-      };
 
-      # Override Secret Portal too
-      xdg.portal.config.niri."org.freedesktop.impl.portal.Secret" = lib.mkForce "oo7-portal";
+        # Override Secret Portal too
+        xdg.portal.config.niri."org.freedesktop.impl.portal.Secret" = lib.mkForce "oo7-portal";
 
-      environment.systemPackages = [
-        pkgs.bibata-cursors
-        pkgs.dconf-editor
-        pkgs.xwayland-satellite
-        pkgs.nautilus
-        pkgs.file-roller
-        pkgs.loupe
-      ];
-
-      programs = {
-        niri.enable = true;
-      };
-
-      nix.settings = {
-        extra-substituters = [ "https://noctalia.cachix.org" ];
-        extra-trusted-public-keys = [
-          "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+        environment.systemPackages = [
+          pkgs.bibata-cursors
+          pkgs.dconf-editor
+          pkgs.xwayland-satellite
+          pkgs.nautilus
+          pkgs.file-roller
+          pkgs.loupe
         ];
-      };
 
-      hanekokoro.nixos.preservation = {
-        directories = [
-          "/var/lib/upower"
-        ];
-        user.directories = [
-          ".config/noctalia"
-          ".local/share/keyrings"
-          ".local/share/nautilus"
-          ".local/state/noctalia"
-        ];
-      };
-    };
+        programs = {
+          niri.enable = true;
+        };
 
-  flake.modules.homeManager."desktop/niri" =
-    { pkgs, ... }:
-    {
-      home.packages = [ pkgs.noctalia ];
+        nix.settings = {
+          extra-substituters = [ "https://noctalia.cachix.org" ];
+          extra-trusted-public-keys = [
+            "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+          ];
+        };
 
-      qt = {
-        enable = true;
-        platformTheme = {
-          name = "qtct";
-          package = [ pkgs.qt6Packages.qt6ct ];
+        hanekokoro.nixos.preservation = {
+          directories = [
+            "/var/lib/upower"
+          ];
+          user.directories = [
+            ".config/noctalia"
+            ".local/share/keyrings"
+            ".local/share/nautilus"
+            ".local/state/noctalia"
+          ];
         };
       };
+    homeManager =
+      { pkgs, ... }:
+      {
+        home.packages = [ pkgs.noctalia ];
 
-      services.swayidle = {
-        enable = true;
-        events = {
-          "before-sleep" = "${pkgs.noctalia}/bin/noctalia msg session lock";
-          "lock" = "${pkgs.noctalia}/bin/noctalia msg session lock";
+        qt = {
+          enable = true;
+          platformTheme = {
+            name = "qtct";
+            package = [ pkgs.qt6Packages.qt6ct ];
+          };
         };
-        timeouts = [
-          {
-            timeout = 600;
-            command = "${pkgs.noctalia}/bin/noctalia msg session lock-and-suspend";
-          }
-        ];
-      };
 
-      home.file.".config/niri/config.kdl".source = ./niri.kdl;
-    };
+        services.swayidle = {
+          enable = true;
+          events = {
+            "before-sleep" = "${pkgs.noctalia}/bin/noctalia msg session lock";
+            "lock" = "${pkgs.noctalia}/bin/noctalia msg session lock";
+          };
+          timeouts = [
+            {
+              timeout = 600;
+              command = "${pkgs.noctalia}/bin/noctalia msg session lock-and-suspend";
+            }
+          ];
+        };
+
+        home.file.".config/niri/config.kdl".source = ./niri.kdl;
+      };
+  };
 }

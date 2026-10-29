@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos."security/lanzaboote" =
+  flake.aspects.security._.lanzaboote.nixos =
     {
       pkgs,
       lib,

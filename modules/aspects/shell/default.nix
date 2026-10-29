@@ -1,37 +1,38 @@
 {
-  flake.modules.nixos.shell = _: {
-    hanekokoro.nixos.preservation.user = {
-      directories = [
-        ".config/carapace"
-        ".local/share/zoxide"
-      ];
-      files = [
-        ".config/nushell/history.txt"
-      ];
+  flake.aspects.shell = {
+    nixos = _: {
+      hanekokoro.nixos.preservation.user = {
+        directories = [
+          ".config/carapace"
+          ".local/share/zoxide"
+        ];
+        files = [
+          ".config/nushell/history.txt"
+        ];
+      };
     };
-  };
+    homeManager = _: {
+      programs.aria2.enable = true;
+      programs.carapace.enable = true;
+      programs.ripgrep.enable = true;
+      programs.jq.enable = true;
+      programs.fd.enable = true;
+      programs.yt-dlp.enable = true;
+      programs.zoxide.enable = true;
 
-  flake.modules.homeManager.shell = _: {
-    programs.aria2.enable = true;
-    programs.carapace.enable = true;
-    programs.ripgrep.enable = true;
-    programs.jq.enable = true;
-    programs.fd.enable = true;
-    programs.yt-dlp.enable = true;
-    programs.zoxide.enable = true;
+      home.shellAliases = {
+        df = "df -h";
+        du = "du -h";
+        grep = "grep --color=auto";
+        ls = "ls -h --group-directories-first --color=auto";
 
-    home.shellAliases = {
-      df = "df -h";
-      du = "du -h";
-      grep = "grep --color=auto";
-      ls = "ls -h --group-directories-first --color=auto";
+        chmod = "chmod --preserve-root -v";
+        chown = "chown --preserve-root -v";
 
-      chmod = "chmod --preserve-root -v";
-      chown = "chown --preserve-root -v";
-
-      ll = "ls -l";
-      l = "ll -A";
-      la = "ls -a";
+        ll = "ls -l";
+        l = "ll -A";
+        la = "ls -a";
+      };
     };
   };
 }
