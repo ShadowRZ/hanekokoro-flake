@@ -16,6 +16,7 @@
             source-han-sans-vf-otf # Source Han Sans Variable
             source-han-serif-vf-otf # Source Han Serif Variable
             nerd-fonts.symbols-only
+            hubot-sans
             (google-fonts.override {
               fonts = [
                 "Space Grotesk"
@@ -25,12 +26,7 @@
             (iosevka-bin.override {
               variant = "Aile";
             })
-            (ibm-plex.override {
-              families = [
-                "sans-variable"
-                "serif-variable"
-              ];
-            })
+            dejavu_fonts
             # Iosevka Builds
             hanekokoro-sans
             hanekokoro-mono
@@ -43,12 +39,12 @@
               # https://bugreports.qt.io/browse/QTBUG-80434
               # So put emoji font here.
               sansSerif = [
-                "IBM Plex Sans Var"
+                "DejaVu Sans"
                 "思源黑体 VF"
                 "Noto Color Emoji"
               ];
               serif = [
-                "IBM Plex Serif Var"
+                "DejaVu Serif"
                 "思源宋体 VF"
                 "Noto Color Emoji"
               ];
