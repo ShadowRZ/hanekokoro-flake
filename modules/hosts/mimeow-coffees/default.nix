@@ -6,6 +6,7 @@
         desktop
         desktop._.environment
         desktop._.environment._.android
+        desktop._.environment._.flatpak
         desktop._.environment._.niri
         desktop._.environment._.steam
         dev
