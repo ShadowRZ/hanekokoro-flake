@@ -15,6 +15,10 @@
         inputs.shadowrz.overlays.default
         # keep-sorted end
       ];
+
+      config.problems.handlers = {
+        "gtk+".broken = "warn"; # or "ignore"
+      };
     };
   };
 }
