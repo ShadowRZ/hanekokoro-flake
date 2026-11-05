@@ -8,8 +8,6 @@
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
-        # If you want to use JACK applications, uncomment this
-        jack.enable = true;
         wireplumber = {
           configPackages = [
             (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/10-bluez.conf" ''
