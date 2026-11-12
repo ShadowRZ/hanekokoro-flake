@@ -3,9 +3,7 @@
     { pkgs, ... }:
     {
       users.users.shadowrz.packages = [
-        (pkgs.android-studio.override {
-          git = pkgs.gitMinimal;
-        })
+        pkgs.android-studio
         pkgs.android-tools
       ];
 

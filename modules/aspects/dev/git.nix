@@ -6,7 +6,7 @@
         programs = {
           git = {
             enable = true;
-            package = pkgs.gitMinimal;
+            package = pkgs.gitFull;
             signing = {
               signByDefault = true;
               format = "openpgp";
