@@ -13,9 +13,9 @@
         hardening
         hardware._.bluetooth
         hardware._.fwupd
-        hardware._.sound
         hardware._.gpu._.intel
         hardware._.gpu._.nvidia
+        hardware._.sound
         hardware._.thunderbolt
         network
         network._.networkmanager
@@ -75,7 +75,7 @@
           };
 
           boot.kernelPackages = pkgs.linuxPackages_latest.extend (
-            final: prev: {
+            _final: prev: {
               ## TODO: https://github.com/NixOS/nixpkgs/pull/575468
               lenovo-legion-module = prev.lenovo-legion-module.overrideAttrs (old: {
                 makeFlags = old.makeFlags ++ [

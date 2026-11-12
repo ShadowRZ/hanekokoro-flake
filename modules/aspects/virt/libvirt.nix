@@ -1,6 +1,6 @@
 {
   flake.aspects.virtualisation._.libvirt.nixos =
-    { config, pkgs, ... }:
+    { pkgs, ... }:
     {
       virtualisation = {
         # Libvirtd
