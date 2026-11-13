@@ -66,7 +66,6 @@
                 backends.gpg.program = lib.getExe pkgs.oct-git;
               };
               git = {
-                sign-on-push = true;
                 abandon-unreachable-commits = true;
               };
               ui = {
@@ -88,6 +87,7 @@
               };
               revsets = {
                 bookmark-advance-to = "closest_pushable(@)";
+                git-sign-on-push = "~signed() & mine()";
               };
               revset-aliases = {
                 "closest_pushable(to)" = ''
